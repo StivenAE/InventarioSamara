@@ -1,0 +1,19 @@
+<div class="nested-fields">
+    <div class="form-check-inline col-form-label">
+      <h5><%= f.input :nombre_archivo %></h5>
+    </div>
+    <div class="form-check-inline">
+      <div class="custom-file">
+        <h5><%= f.label :Archivo %></h5>
+        <%= f.file_field :file%>
+      </div>
+    </div>
+
+    <div class=" form-check-inline">
+      <%= link_to_remove_association  "X",f,class:"btn btn-outline-danger"%>
+    </div>
+    <p>
+
+
+
+</div>

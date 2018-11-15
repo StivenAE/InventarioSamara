@@ -1,0 +1,57 @@
+<div  class="shadow-lg p-3 mb-5 bg-white rounded">
+  <center>
+    <h1>Informacion de equipos</h1>
+  </center>
+</div>
+
+<table class="table table-hover table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Serial</th>
+      <th>Area funcionamiento</th>
+      <th>Fecha compra</th>
+      <th>Fecha vencimiento garantia</th>
+      <th>Proveedor</th>
+      <th>Piezas remplazadas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <div class="d-flex flex-row-reverse bd-highligth p-1">
+        <%= link_to 'Nuevo registro', new_hojavida_path, class:"btn btn-success mr-2" %>
+        <%= link_to 'PDF', hojavidas_path(format: "pdf"), class:"btn btn-outline-danger mr-2" %>
+        <%= link_to 'CSV', hojavidas_path(format: "csv"), class:"btn btn-outline-info mr-2" %>
+        <%= link_to 'Excel', hojavidas_path(format: "xls"), class:"btn btn-outline-success mr-2" %>
+    </div>
+
+    <% @hojavidas.each do |hojavida| %>
+      <tr>
+        <td><%= hojavida.nombre %></td>
+        <td><%= hojavida.tipo %></td>
+        <td><%= hojavida.marca %></td>
+        <td><%= hojavida.modelo %></td>
+        <td><%= hojavida.serial %></td>
+        <td><%= hojavida.area_funcionamiento %></td>
+        <td><%= hojavida.fecha_compra %></td>
+        <td><%= hojavida.garantia %></td>
+        <td><%= hojavida.proveedor %></td>
+        <td><%= hojavida.pieza %></td>
+        <td><%= link_to 'Ver', hojavida,class:"btn btn-info" %></td>
+        <td><%= link_to 'Editar', edit_hojavida_path(hojavida), class:"btn btn-warning" %></td>
+        <td><%= link_to 'X', hojavida, method: :delete, data: {title:'Eliminar',
+          confirm: 'Esta seguro de eliminar el registro?',cancel:'Cancelar',commit:'Eliminar'}, class:"btn btn-outline-danger " %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  <%=will_paginate @hojavida,renderer: WillPaginate::ActionView::BootstrapLinkRenderer,previous_label:"Anterior ",next_label:" Siguiente",
+  inner_window: 1, outer_window: 0 %>
+
+<br>

@@ -1,0 +1,32 @@
+
+    <center>
+    <h2>Inventario equipos Samara Cosmetics</h2>
+    </center>
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 200px;" >Nombre</th>
+          <th style="width: 150px;" >Tipo</th>
+          <th style="width: 150px;" >Marca</th>
+          <th style="width: 150px;" >Serial</th>
+          <th style="width: 200px;" >Area funcionamiento</th>
+          <th style="width: 200px;" >Fecha compra</th>
+          <th style="width: 200px;" >Fecha vencimiento garantia</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @hojavidas.each do |hojavida|%>
+        <tr>
+          <td><%= hojavida.nombre %></td>
+          <td><%= hojavida.tipo %></td>
+          <td><%= hojavida.marca %></td>
+          <td><%= hojavida.serial %></td>
+          <td><%= hojavida.area_funcionamiento %></td>
+          <td><%= hojavida.fecha_compra %></td>
+          <td><%= hojavida.garantia %></td>
+        </tr>
+        <% end %>
+      </tbody>
+
+    </table>

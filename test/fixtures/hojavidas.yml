@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  tipo: MyString
+  marca: MyString
+  modelo: MyString
+  serial: MyString
+  area_funcionamiento: MyString
+  descripcion: MyText
+  precauciones: MyText
+  fecha_compra: 2018-11-02
+  garantia: 2018-11-02
+  proveedor: MyString
+  pieza: MyString
+
+two:
+  nombre: MyString
+  tipo: MyString
+  marca: MyString
+  modelo: MyString
+  serial: MyString
+  area_funcionamiento: MyString
+  descripcion: MyText
+  precauciones: MyText
+  fecha_compra: 2018-11-02
+  garantia: 2018-11-02
+  proveedor: MyString
+  pieza: MyString

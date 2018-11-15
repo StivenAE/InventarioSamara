@@ -1,0 +1,61 @@
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%=image_tag 'logs.png', :class=>"d-block w-100", :alt=>"First slide"%>
+    </div>
+    <div class="carousel-item">
+      <%=image_tag 'log2.png', :class=>"d-block w-100", :alt=>"Second slide"%>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="card">
+  <div class="card-header" style="background-color:#282c31" >
+    <h5 style="color:#FFFFFF";>Acerca del sistema</h5>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>Este es un sistema de inventario, inventario de computo u otros dispositivos, que busca
+      recolectar toda la informacion de un equipo para mejorar la busqueda de esta, aparte de esto
+      llevara el control de otras sesiones en general.</p>
+      <footer class="blockquote-footer">Mejorando cada dia mas<cite title="Source Title"></cite></footer>
+    </blockquote>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Ir al registro de computo</h5>
+        <p class="card-text">Registra el estado o si se ah hecho algun cambio. <br>Registralo !</p>
+        <%= link_to "Ir al registro", hojavidas_path,{class:"btn btn-outline-success"} %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Tienes algun problema ? Reportalo</h5>
+        <p class="card-text">Si presentas algun problema en general de soporte que involucra al area de sistemas, crea un reporte</p>
+        <a href="#" class="btn btn-outline-success">Hacer reporte</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" class="blockquote-footer" style="background-color:#282c31" >
+  <div class="container" style="color:#FFFFFF">
+    <p>2018 © Samaracosmetics.com. Todos los derechos reservados. __Creado por Stiven Arteaga</p>
+  </div>
+</footer>

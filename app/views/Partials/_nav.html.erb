@@ -1,0 +1,62 @@
+<% if user_signed_in?%>
+<div class="pos-f-t" >
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h3">Samara Cosmetics</h5>
+      <span class="text-muted h5">Sistema integrado para el area de sistemas</span>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+
+          <div class="navbar-nav mr-auto text-center">
+            <%= link_to "Inicio", root_path,class:"navbar-brand" %></a>
+            <%= link_to "Registro equipo", hojavidas_path,class:"btn btn-outline-success mr-2" %>
+
+          </div>
+
+            <div class="d-flex flex-row justify-content-center">
+
+              <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete, class:"btn btn-outline-danger mr-2"%>
+            </div>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+<%else%>
+<div class="pos-f-t" >
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h3">Samara Cosmetics</h5>
+      <span class="text-muted h5">Sistema integrado para el area de sistemas</span>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+          <div class="navbar-nav mr-auto text-center">
+            <%= link_to "Inicio", root_path,{class:"navbar-brand"} %></a>
+            <%= link_to "Registro equipo", hojavidas_path,{class:"btn btn-outline-success mr-2"} %>
+
+          </div>
+
+            <div class="d-flex flex-row justify-content-center">
+              <%= link_to "Iniciar sesion", new_user_session_path,{class:"btn btn-outline-success mr-2"}%>
+            </div>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+<%end%>

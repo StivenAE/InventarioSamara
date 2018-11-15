@@ -1,0 +1,19 @@
+tr{
+  border-bottom: solid;
+  border-width:1xp;
+  border-color:black;
+
+}
+td,th{
+  text-aling:left;
+}
+th{
+  background-color:#000;
+  color:white;
+}
+table{
+  border-collapse: collapse;
+}
+table,tr,td,th,tbody,thead,tfoot{
+    page-break-inside: avoid !important;
+}

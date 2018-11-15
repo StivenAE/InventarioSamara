@@ -1,0 +1,110 @@
+<%= simple_form_for(@hojavida) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs ">
+    <div class="col-md-10  ">
+    <h5> <%= f.input :nombre, :hint=>"Nombre equio ejm: Computador"%></h5>
+    </div>
+    <div class="col-md-10 ">
+      <h5><%= f.input :tipo %></h5>
+    </div>
+    <div class="col-md-10 ">
+      <h5><%= f.input :marca %></h5>
+    </div>
+    <div class="col-md-10 ">
+    <h5><%= f.input :modelo %></h5>
+    </div>
+    <div class="col-md-10 ">
+      <h5><%= f.input :serial %></h5>
+    </div>
+    <div class="col-md-10 ">
+      <h5><%= f.input :area_funcionamiento %></h5>
+    </div>
+    <div class="col-md-10 ">
+      <h5><%= f.input :descripcion, :hint=>"Que funcionalidad desarrolla el equipo" %></h5>
+    </div>
+    <div class="col-md-10 ">
+      <h5><%= f.input :precauciones %></h5>
+    </div>
+    <div class="col-md-10 ">
+    <h5><%= f.input :fecha_compra, as: :date,start_year: Date.today.year-28,
+                                end_year: Date.today.year,
+                                order:[:year,:month, :day],:hint=>"Fecha en que se recibio el equipo" %></h5>
+    </div>
+    <div class="col-md-10 ">
+    <h5><%= f.input :garantia, as: :date,start_year: Date.today.year-10,
+                                end_year: Date.today.year+20,
+                                order:[:year,:month, :day],:hint=>"Hasta que fecha esta vigente la garantia" %></h5>
+    </div>
+    <div class="col-md-10 ">
+      <h5><%= f.input :proveedor %></h5>
+    </div>
+    <div class="col-md-10 ">
+      <h5><%= f.input :pieza, :hint=>"Piezas remplazadas" %></h5>
+    </div>
+  </div>
+<center>
+
+  <div class="row col-md-10">
+
+    <div class="col-md-12">
+      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <h3>Añadir Licencias</h3>
+      <div id='permisos'>
+
+        <%= f.simple_fields_for :permisos do |permiso|%>
+        <%=render 'permisos_fields', :f => permiso%>
+        <%end%>
+        <div class='links'>
+          <br>
+          <%= link_to_add_association 'Agregar', f, :permisos,partial: 'permisos_fields',class:"btn btn-outline-info"%>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+  <div class="row col-md-12">
+
+    <div class="col-md-6">
+      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <h3>Añadir componentes del equipo</h3>
+      <div id='componentes'>
+
+        <%= f.simple_fields_for :componentes do |componente|%>
+        <%=render 'componentes_fields', :f => componente%>
+        <%end%>
+        <div class='links'>
+          <br>
+          <%= link_to_add_association 'Agregar', f, :componentes,partial: 'componentes_fields',class:"btn btn-outline-info"%>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="col-md-6 ">
+      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <h3>Añadir Archivos del equipo</h3>
+      <div id='archives'>
+
+        <%= f.simple_fields_for :archives do |archive|%>
+        <%=render 'archives_fields', :f => archive%>
+        <%end%>
+        <div class='links'>
+          <br>
+          <%= link_to_add_association 'Agregar', f, :archives,partial: 'archives_fields',class:"btn btn-outline-info"%>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+<br>
+  <form actions="index">
+    <%= f.button :submit,"Guardar",class:"btn btn-success col-md-4" %>
+  </form>
+<% end %>
+</center>

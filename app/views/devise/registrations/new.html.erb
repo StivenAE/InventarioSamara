@@ -1,0 +1,32 @@
+<center>
+<h1><%= "Registrate" %></h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= bootstrap_devise_error_messages! %>
+
+  <div class="form-group col-md-8">
+    <%= f.label :email,"Correo Electronico" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+  </div>
+
+  <div class="form-group col-md-6">
+    <%= f.label :password, "Contraseña" %>
+    <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+
+    <% if @minimum_password_length %>
+      <small class="form-text text-muted"><%= t('6 caracteres minimo', count: @minimum_password_length) %></small>
+    <% end %>
+  </div>
+
+  <div class="form-group col-md-6">
+    <%= f.label :password_confirmation, "Confirma tu contraseña" %>
+    <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Registrate", class: 'btn btn-success col-md-3' %>
+  </div>
+<% end %>
+
+<%= render 'devise/shared/links' %>
+</center>

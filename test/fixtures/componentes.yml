@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_componente: MyString
+  serial: MyString
+  hojavida: one
+
+two:
+  nombre_componente: MyString
+  serial: MyString
+  hojavida: two

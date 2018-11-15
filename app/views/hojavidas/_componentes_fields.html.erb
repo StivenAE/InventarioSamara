@@ -1,0 +1,14 @@
+<div class="nested-fields">
+    <div class="form-check-inline col-form-label">
+      <h5><%= f.input :nombre_componente %></h5>
+    </div>
+    <div class="form-check-inline ">
+      <h5><%= f.input :serial%></h5>
+    </div>
+
+    <div class=" form-check-inline">
+      <%= link_to_remove_association  "X",f,class:"btn btn-outline-danger"%>
+    </div>
+
+
+</div>

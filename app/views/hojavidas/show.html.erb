@@ -1,0 +1,90 @@
+<div  class="shadow-lg p-3 mb-5 bg-white rounded">
+  <center>
+    <h1>Detalles del registro</h1>
+  </center>
+</div>
+<p>
+  <strong>Nombre:</strong>
+  <%= @hojavida.nombre %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @hojavida.tipo %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @hojavida.marca %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @hojavida.modelo %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @hojavida.serial %>
+</p>
+
+<p>
+  <strong>Area funcionamiento:</strong>
+  <%= @hojavida.area_funcionamiento %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @hojavida.descripcion %>
+</p>
+
+<p>
+  <strong>Precauciones:</strong>
+  <%= @hojavida.precauciones %>
+</p>
+
+<p>
+  <strong>Fecha compra:</strong>
+  <%= @hojavida.fecha_compra %>
+</p>
+
+<p>
+  <strong>Garantia:</strong>
+  <%= @hojavida.garantia %>
+</p>
+
+<p>
+  <strong>Proveedor:</strong>
+  <%= @hojavida.proveedor %>
+</p>
+
+<p>
+  <strong>Pieza:</strong>
+  <%= @hojavida.pieza %>
+</p>
+        <h4><strong>Licencias :</strong></h4>
+        <p>
+          <% @hojavida.permisos.each do |permiso|%>
+          <p><strong>Nombre : </strong> <%= permiso.nombre%> &nbsp;&nbsp;<strong>Serial : </strong><%=permiso.serial%>
+          &nbsp;&nbsp;<strong>Fecha vencimiento : </strong><%=permiso.fecha_vencimiento%></p>
+
+          <%end%>
+        </p>
+
+        <h4><strong>Componentes del equipo :</strong></h4>
+        <p>
+          <% @hojavida.componentes.each do |componente|%>
+          <p><strong>Nombre : </strong> <%= componente.nombre_componente%>&nbsp;&nbsp; <strong>Serial : </strong><%=componente.serial%></p>
+          <%end%>
+        </p>
+
+        <h4><strong>Archivos:</strong></h4>
+        <p>
+          <% @hojavida.archives.each do |archive|%>
+          <p><strong>Archivo : </strong> <%= archive.nombre_archivo%> <%=link_to "Archivo",archive.file %></p>
+          <%end%>
+        </p>
+
+
+    <%= link_to 'Editar', edit_hojavida_path(@hojavida),class:"btn btn-warning" %>
+    <%= link_to 'Atras', hojavidas_path,class:"btn btn-info" %>
