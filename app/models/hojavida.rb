@@ -4,6 +4,16 @@ class Hojavida < ApplicationRecord
   has_many :permisos, :dependent => :destroy
 
 
+
+    def self.search(search)
+      if search
+        where( 'nombre LIKE ?', "%#{search}%")
+      else
+        all
+      end
+    end
+
+
   def self.to_xls
   end
   def self.to_csv(options ={})

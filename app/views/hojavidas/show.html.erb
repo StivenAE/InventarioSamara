@@ -3,6 +3,7 @@
     <h1>Detalles del registro</h1>
   </center>
 </div>
+<center>
 <p>
   <strong>Nombre:</strong>
   <%= @hojavida.nombre %>
@@ -81,10 +82,13 @@
         <h4><strong>Archivos:</strong></h4>
         <p>
           <% @hojavida.archives.each do |archive|%>
-          <p><strong>Archivo : </strong> <%= archive.nombre_archivo%> <%=link_to "Archivo",archive.file %></p>
+          <p><strong>Nombre : </strong> <%= archive.nombre_archivo%> <%=link_to "Archivo",archive.file %></p>
           <%end%>
         </p>
 
 
     <%= link_to 'Editar', edit_hojavida_path(@hojavida),class:"btn btn-warning" %>
     <%= link_to 'Atras', hojavidas_path,class:"btn btn-info" %>
+    <br>
+    <hr>
+</center>

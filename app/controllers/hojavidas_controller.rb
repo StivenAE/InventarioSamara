@@ -4,7 +4,8 @@ class HojavidasController < ApplicationController
   # GET /hojavidas
   # GET /hojavidas.json
   def index
-    @hojavidas = Hojavida.order(:nombre).paginate(:page => params[:page], :per_page =>5)
+    @hojavidas = Hojavida.search(params[:search]).order(:nombre).paginate(:page => params[:page], :per_page =>5)
+    #.where(nombre: 'Computador')
     respond_to do |format|
       format.html
       format.json
@@ -38,7 +39,7 @@ class HojavidasController < ApplicationController
 
     respond_to do |format|
       if @hojavida.save
-        format.html { redirect_to @hojavida, notice: 'Hojavida was successfully created.' }
+        format.html { redirect_to @hojavida, notice: 'Registro creado correctamente.' }
         format.json { render :show, status: :created, location: @hojavida }
       else
         format.html { render :new }
@@ -52,7 +53,7 @@ class HojavidasController < ApplicationController
   def update
     respond_to do |format|
       if @hojavida.update(hojavida_params)
-        format.html { redirect_to @hojavida, notice: 'Hojavida was successfully updated.' }
+        format.html { redirect_to @hojavida, notice: 'Registro actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @hojavida }
       else
         format.html { render :edit }
@@ -66,7 +67,7 @@ class HojavidasController < ApplicationController
   def destroy
     @hojavida.destroy
     respond_to do |format|
-      format.html { redirect_to hojavidas_url, notice: 'Hojavida was successfully destroyed.' }
+      format.html { redirect_to hojavidas_url, notice: 'Registro eliminado correctamente..' }
       format.json { head :no_content }
     end
   end

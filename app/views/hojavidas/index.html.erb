@@ -22,10 +22,19 @@
   </thead>
 
   <tbody>
+    <center>
+    <div class="col-md-4 ">
+        <div class="d-flex justify-content-between">
+              <%= form_tag hojavidas_path, :method => 'get' do %>
+              <%= text_field_tag :search, params[:search],class:"form-control mr-sm-2", placeholder:"Buscar..." %>
+              <%= submit_tag "Buscar", :name => nil,type:"hidden" %>
+              <% end %>
+        </div>
+    </div>
+    </center>
     <div class="d-flex flex-row-reverse bd-highligth p-1">
         <%= link_to 'Nuevo registro', new_hojavida_path, class:"btn btn-success mr-2" %>
         <%= link_to 'PDF', hojavidas_path(format: "pdf"), class:"btn btn-outline-danger mr-2" %>
-        <%= link_to 'CSV', hojavidas_path(format: "csv"), class:"btn btn-outline-info mr-2" %>
         <%= link_to 'Excel', hojavidas_path(format: "xls"), class:"btn btn-outline-success mr-2" %>
     </div>
 
