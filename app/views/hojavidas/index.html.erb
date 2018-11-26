@@ -50,7 +50,7 @@
         <td><%= hojavida.garantia %></td>
         <td><%= hojavida.proveedor %></td>
         <td><%= hojavida.pieza %></td>
-        <td><%= link_to 'Ver', hojavida,class:"btn btn-info" %></td>
+        <td><%= link_to 'Ver', hojavida,class:"btn btn-primary" %></td>
         <td><%= link_to 'Editar', edit_hojavida_path(hojavida), class:"btn btn-warning" %></td>
         <td><%= link_to 'X', hojavida, method: :delete, data: {title:'Eliminar',
           confirm: 'Esta seguro de eliminar el registro?',cancel:'Cancelar',commit:'Eliminar'}, class:"btn btn-outline-danger " %></td>
@@ -59,8 +59,10 @@
     <% end %>
   </tbody>
 </table>
-
+<br>
+<div class="d-flex justify-content-center">
   <%=will_paginate @hojavida,renderer: WillPaginate::ActionView::BootstrapLinkRenderer,previous_label:"Anterior ",next_label:" Siguiente",
   inner_window: 1, outer_window: 0 %>
+</div>
 
 <br>

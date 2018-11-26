@@ -4,16 +4,20 @@ class HojavidasController < ApplicationController
   # GET /hojavidas
   # GET /hojavidas.json
   def index
-    @hojavidas = Hojavida.search(params[:search]).order(:nombre).paginate(:page => params[:page], :per_page =>5)
+    @hojavidas = Hojavida.search(params[:search]).order(:nombre).paginate(:page => params[:page], :per_page =>7)
     #.where(nombre: 'Computador')
+
     respond_to do |format|
       format.html
       format.json
       format.pdf do
+        @hojavidas = Hojavida.all.order(:nombre)
         render template: "Partials/pdf", pdf: 'Pdf',layout: 'pdf.html'
       end
       format.csv {send_data @hojavidas.to_csv}
-      format.xls # {send_data @hojavidas.to_csv(col_sep: "\t")}
+      format.xls do
+        @hojavidas =Hojavida.all.order(:nombre)
+      end# {send_data @hojavidas.to_csv(col_sep: "\t")}
 
     end
   end
