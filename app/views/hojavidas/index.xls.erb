@@ -13,6 +13,7 @@
         <Cell><Data ss:Type="String">Area funcionamiento</Data></Cell>
         <Cell><Data ss:Type="String">Fecha compra</Data></Cell>
         <Cell><Data ss:Type="String">Fecha vencimiento garantia</Data></Cell>
+        <Cell><Data ss:Type="String">Precio</Data></Cell>
       </Row>
     <% @hojavidas.each do |hojavida| %>
       <Row>
@@ -22,6 +23,7 @@
         <Cell><Data ss:Type="String"><%= hojavida.area_funcionamiento %></Data></Cell>
         <Cell><Data ss:Type="String"><%= hojavida.fecha_compra %></Data></Cell>
         <Cell><Data ss:Type="String"><%= hojavida.garantia %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= hojavida.precio %></Data></Cell>
       </Row>
     <% end %>
     </Table>

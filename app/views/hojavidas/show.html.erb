@@ -30,6 +30,11 @@
 </p>
 
 <p>
+  <strong>Precio:</strong>
+  <%= @hojavida.precio %>
+</p>
+
+<p>
   <strong>Area funcionamiento:</strong>
   <%= @hojavida.area_funcionamiento %>
 </p>
@@ -67,7 +72,7 @@
         <p>
           <% @hojavida.permisos.each do |permiso|%>
           <p><strong>Nombre : </strong> <%= permiso.nombre%> &nbsp;&nbsp;<strong>Serial : </strong><%=permiso.serial%>
-          &nbsp;&nbsp;<strong>Fecha vencimiento : </strong><%=permiso.fecha_vencimiento%></p>
+          &nbsp;&nbsp;<strong>Fecha vencimiento : </strong><%=permiso.fecha_vencimiento%> </p>
 
           <%end%>
         </p>

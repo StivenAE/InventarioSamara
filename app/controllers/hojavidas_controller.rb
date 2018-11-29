@@ -16,14 +16,14 @@ class HojavidasController < ApplicationController
       end
       format.csv {send_data @hojavidas.to_csv}
       format.xls do
-        @hojavidas =Hojavida.all.order(:nombre)
+        @hojavidas = Hojavida.all.order(:nombre)
       end# {send_data @hojavidas.to_csv(col_sep: "\t")}
 
     end
   end
 
   # GET /hojavidas/1
-  # GET /hojavidas/1.json
+  # GET /hojavidas/1.
   def show
   end
 
@@ -84,7 +84,7 @@ class HojavidasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hojavida_params
-      params.require(:hojavida).permit(:nombre, :tipo, :marca, :modelo, :serial, :area_funcionamiento, :descripcion, :precauciones, :fecha_compra, :garantia, :proveedor, :pieza,
+      params.require(:hojavida).permit(:nombre, :tipo, :marca, :modelo, :serial, :precio ,:area_funcionamiento, :descripcion, :precauciones, :fecha_compra, :garantia, :proveedor, :pieza,
       componentes_attributes: [:id,:nombre_componente,:serial, :_destroy],archives_attributes: [:id,:nombre_archivo,:file,:_destroy],
       permisos_attributes: [:id,:nombre ,:serial,:fecha_vencimiento,:_destroy])
     end
