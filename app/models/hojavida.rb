@@ -24,11 +24,8 @@ class Hojavida < ApplicationRecord
 
 
   validates_presence_of :nombre, :tipo, :marca, :modelo, :serial, :area_funcionamiento,:fecha_compra, :garantia, :proveedor, :pieza;
-  accepts_nested_attributes_for :componentes,reject_if: :all_blank,allow_destroy: true
+    accepts_nested_attributes_for :componentes,reject_if: :all_blank,allow_destroy: true
     accepts_nested_attributes_for :archives,reject_if: :all_blank,allow_destroy: true
-      accepts_nested_attributes_for :permisos,reject_if: :all_blank,allow_destroy: true
-
-
-
+    accepts_nested_attributes_for :permisos,reject_if: :all_blank,allow_destroy: true
 
 end

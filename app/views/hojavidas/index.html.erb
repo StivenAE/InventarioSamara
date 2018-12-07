@@ -7,15 +7,15 @@
 <table class="table table-hover table-striped">
   <thead class="thead-dark">
     <tr>
-      <th>Nombre</th>
+      <th><%= sortable "nombre" %></th>
       <th>Tipo</th>
       <th>Marca</th>
       <th>Modelo</th>
       <th>Serial</th>
       <th>Area funcionamiento</th>
-      <th>Fecha compra</th>
+      <th><%= sortable "fecha_compra" %></th>
       <th>Fecha vencimiento garantia</th>
-      <th>Proveedor</th>
+      <th><%= sortable "proveedor" %></th>
       <th>Piezas remplazadas</th>
       <th colspan="3"></th>
     </tr>
@@ -25,10 +25,11 @@
     <center>
     <div class="col-md-4 ">
         <div class="d-flex justify-content-between">
-              <%= form_tag hojavidas_path, :method => 'get' do %>
-              <%= text_field_tag :search, params[:search],class:"form-control mr-sm-2", placeholder:"Buscar..." %>
-              <%= submit_tag "Buscar", :name => nil,type:"hidden" %>
+              <%= form_tag hojavidas_path, :method => 'get', :id => "hojavidas_search" do %>
+                <%= text_field_tag :search, params[:search],class:"form-control mr-sm-2", placeholder:"Buscar..." %>
+                <%= submit_tag "Buscar", :name => nil,type:"hidden" %>
               <% end %>
+
         </div>
     </div>
     </center>
@@ -50,7 +51,7 @@
         <td><%= hojavida.garantia %></td>
         <td><%= hojavida.proveedor %></td>
         <td><%= hojavida.pieza %></td>
-        <td><%= link_to 'Ver', hojavida,class:"btn btn-primary" %></td>
+        <td><%= link_to '➜', hojavida,class:"btn btn-primary" %></td>
         <td><%= link_to 'Editar', edit_hojavida_path(hojavida), class:"btn btn-warning" %></td>
         <td><%= link_to 'X', hojavida, method: :delete, data: {title:'Eliminar',
           confirm: 'Esta seguro de eliminar el registro?',cancel:'Cancelar',commit:'Eliminar'}, class:"btn btn-outline-danger " %></td>

@@ -1,6 +1,5 @@
 module HojavidasHelper
 
-
-
+  
 
 end

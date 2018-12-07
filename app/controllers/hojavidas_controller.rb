@@ -1,10 +1,13 @@
 class HojavidasController < ApplicationController
-  before_action :set_hojavida, only: [:show, :edit, :update, :destroy]
+    before_action :set_hojavida, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
+    helper_method :sort_column, :sort_direction
   # GET /hojavidas
   # GET /hojavidas.json
   def index
-    @hojavidas = Hojavida.search(params[:search]).order(:nombre).paginate(:page => params[:page], :per_page =>7)
+    @hojavidas = Hojavida.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page =>7)
+    # .where("name LIKE ?", "%#{params[:search]}%")
+    # search(params[:search])
     #.where(nombre: 'Computador')
 
     respond_to do |format|
@@ -77,6 +80,15 @@ class HojavidasController < ApplicationController
   end
 
   private
+
+  def sort_column
+    Hojavida.column_names.include?(params[:sort]) ? params[:sort] : "nombre"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_hojavida
       @hojavida = Hojavida.find(params[:id])
