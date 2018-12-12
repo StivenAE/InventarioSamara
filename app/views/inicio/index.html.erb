@@ -24,21 +24,25 @@
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
-      <p>Este es un sistema de inventario, inventario de computo u otros dispositivos, que busca
-      recolectar toda la informacion de un equipo para mejorar la busqueda de esta, aparte de esto
-      llevara el control de otras sesiones en general.</p>
-      <footer class="blockquote-footer">Mejorando cada dia mas<cite title="Source Title"></cite></footer>
+      <p>Sistema informatico creado con el fin de llevar control de inventarios de computo u otros dispositivos, busca
+         recolectar toda la informacion de un equipo para hacer un control previo respectivamente.<br>
+         Permitira a los empleados de la empresa reportar un problema con cualquier equipo tecnologico,
+         dejando en evidencia las fechas y el problema que presentan.<br>
+         Pedidos entrantes y procesos de maquilacion.<br>
+         Facilidad para ingresar y generar una remision dado el caso, dando un mejor uso y representacion de las remisiones.
+      </p>
+      <footer class="blockquote-footer">Samara Cosmetics S.A, siendo mejores cada dia<cite title="Source Title"></cite></footer>
     </blockquote>
   </div>
 </div>
-
+<br>
 
 <div class="row">
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Ir al registro de computo</h5>
-        <p class="card-text">Registra el estado o si se ah hecho algun cambio. <br>Registralo !</p>
+        <p class="card-text">Registra el estado o si se ah hecho algun cambio en el equipo. Registralo !</p>
         <%= link_to "Ir al registro", hojavidas_path,{class:"btn btn-outline-success"} %>
       </div>
     </div>
@@ -53,9 +57,40 @@
     </div>
   </div>
 </div>
-
-<footer class="footer" class="blockquote-footer" style="background-color:#282c31" >
-  <div class="container" style="color:#FFFFFF">
-    <p>2018 © Samaracosmetics.com. Todos los derechos reservados. __Creado por Stiven Arteaga</p>
+<br>
+<div class="card text-center">
+  <div class="card-body">
+    <p class="card-text">Sistema creado y puesto en desarrollo internamente en la empresa Samara Cosmetics S.A</p>
+    <a href="#" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter">Desarrollado por :</a>
   </div>
-</footer>
+  <div class="card-footer text-muted" style="background-color:#282c31">
+    2018 © Samaracosmetics.com. Todos los derechos reservados.
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalCenterTitle">Sistema desarrollado y aprobado</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Creditos</h5>
+        <p>
+            Nombre : Stiven Arteaga Espitia<br>
+            Cargo  : Tecnologo y asistente de sistemas<br>
+            Telefono : 4448438 ext 129 <br>
+            Correo : stiven.arteaga@Samaracosmetics.com<br>
+        </p>
+        <p>Inquietud o interes, atendidos directamente al correo electronico.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
