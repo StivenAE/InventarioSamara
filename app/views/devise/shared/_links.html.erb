@@ -6,7 +6,8 @@
 
 
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-    <%= link_to t(".Olvidaste tu contraseña"), new_password_path(resource_name), class: 'btn btn-outline-danger col-md-2' %><br />
+    <%= link_to t(".Olvidaste tu contraseña"), new_password_path(resource_name), class: 'btn btn-outline-danger col-md-2 mr-2' %><br />
+    <%= link_to "Atras", root_path,{class:"btn btn-outline-primary col-md-1 "} %>
   <% end -%>
 
   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

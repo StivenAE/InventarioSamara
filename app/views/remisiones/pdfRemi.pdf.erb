@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> RemisionesSamaracosmetics</title>
+    <%=wicked_pdf_stylesheet_link_tag 'pdf'%>
+  <body>
+    <center>
+    <h2>Remisiones</h2>
+    </center>
+    <div class="">
+      <%= wicked_pdf_image_tag '200klogo.png',style:"float:left; margin:0px;" %>
+    </div>
+    <center>
+    <h4>Samara Cosmetics S.A</h4>
+    <p>Cra 54 No 4 - 35<br>Telefono : 225 84 32 - 444 84 38<br>samaracosmetics@une.net.co<br>IVA-REGIMEN COMUN<br>Agente retenedor</p>
+    </center>
+    <br>
+        <% @clienteremis.each do |clienteremi|%>
+        <tr>
+          <td><%= clienteremi.nombre %></td>
+          <td><%= clienteremi.apellidos %></td>
+          <td><%= clienteremi.empresa %></td>
+          <td><%= clienteremi.nit %></td>
+          <td><%= clienteremi.ciudad %></td>
+          <td><%= clienteremi.direccion %></td>
+          <td><%= clienteremi.telefono %></td>
+          <td><%= clienteremi.forma_pago %></td>
+        </tr>
+        <% end %>
+
+
+  </body>
+</html>

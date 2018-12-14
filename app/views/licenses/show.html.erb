@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @license.nombre %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @license.serial %>
+</p>
+
+<p>
+  <strong>Fecha vencimiento:</strong>
+  <%= @license.fecha_vencimiento %>
+</p>
+
+<p>
+  <strong>Hojavida:</strong>
+  <%= @license.hojavida %>
+</p>
+
+<%= link_to 'Edit', edit_license_path(@license) %> |
+<%= link_to 'Back', licenses_path %>

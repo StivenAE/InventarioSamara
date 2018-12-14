@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_120404) do
+ActiveRecord::Schema.define(version: 2018_12_14_144226) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(version: 2018_11_29_120404) do
     t.index ["hojavida_id"], name: "index_archives_on_hojavida_id"
   end
 
+  create_table "clienteremis", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellidos"
+    t.string "empresa"
+    t.string "nit"
+    t.string "ciudad"
+    t.string "direccion"
+    t.string "telefono"
+    t.string "forma_pago"
+    t.string "pedido"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "componentes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nombre_componente"
     t.string "serial"
@@ -66,6 +80,16 @@ ActiveRecord::Schema.define(version: 2018_11_29_120404) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "precio"
+  end
+
+  create_table "licenses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nombre"
+    t.string "serial"
+    t.date "fecha_vencimiento"
+    t.bigint "hojavida_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hojavida_id"], name: "index_licenses_on_hojavida_id"
   end
 
   create_table "permisos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -99,5 +123,6 @@ ActiveRecord::Schema.define(version: 2018_11_29_120404) do
 
   add_foreign_key "archives", "hojavidas"
   add_foreign_key "componentes", "hojavidas"
+  add_foreign_key "licenses", "hojavidas"
   add_foreign_key "permisos", "hojavidas"
 end

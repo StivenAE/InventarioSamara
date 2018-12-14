@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<div  class="shadow-lg p-3 mb-5 bg-white rounded">
+  <center>
+    <h1>Clientes de remisiones</h1>
+  </center>
+</div>
+
+<table class="table table-hover table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Empresa</th>
+      <th>Nit</th>
+      <th>Ciudad</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Forma pago</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <div class="d-flex flex-row-reverse bd-highligth p-1">
+      <%= link_to 'Nuevo registro', new_clienteremi_path, class:"btn btn-success mr-2" %>
+  </div>
+
+  <tbody>
+    <% @clienteremis.each do |clienteremi| %>
+      <tr>
+        <td><%= clienteremi.nombre %></td>
+        <td><%= clienteremi.apellidos %></td>
+        <td><%= clienteremi.empresa %></td>
+        <td><%= clienteremi.nit %></td>
+        <td><%= clienteremi.ciudad %></td>
+        <td><%= clienteremi.direccion %></td>
+        <td><%= clienteremi.telefono %></td>
+        <td><%= clienteremi.forma_pago %></td>
+        <td><%= link_to 'Editar', edit_clienteremi_path(clienteremi), class:"btn btn-warning" %></td>
+        <td><%= link_to 'X', clienteremi, method: :delete, data: {title:'Eliminar',
+          confirm: 'Esta seguro de eliminar el registro?',cancel:'Cancelar',commit:'Eliminar'}, class:"btn btn-outline-danger " %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

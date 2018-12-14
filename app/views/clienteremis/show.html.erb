@@ -1,0 +1,53 @@
+<div  class="shadow-lg p-3 mb-5 bg-white rounded">
+  <center>
+    <h1>Detalles del cliente</h1>
+  </center>
+</div>
+<center>
+<p>
+  <strong>Nombre:</strong>
+  <%= @clienteremi.nombre %>
+</p>
+
+<p>
+  <strong>Apellidos:</strong>
+  <%= @clienteremi.apellidos %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @clienteremi.empresa %>
+</p>
+
+<p>
+  <strong>Nit:</strong>
+  <%= @clienteremi.nit %>
+</p>
+
+<p>
+  <strong>Ciudad:</strong>
+  <%= @clienteremi.ciudad %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @clienteremi.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @clienteremi.telefono %>
+</p>
+
+<p>
+  <strong>Forma pago:</strong>
+  <%= @clienteremi.forma_pago %>
+</p>
+
+<p>
+  <strong>Pedido:</strong>
+  <%= @clienteremi.pedido %>
+</p>
+<%= link_to 'Editar', edit_clienteremi_path(@clienteremi) ,class:"btn btn-warning" %>
+<%= link_to 'Inicio', clienteremis_path,class:"btn btn-primary" %>
+</center>

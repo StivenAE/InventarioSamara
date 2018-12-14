@@ -92,6 +92,20 @@
         </p>
 
 
+
+          <h2>Licencias</h2>
+          <% if @hojavida.licenses.any? %>
+          <ul>
+           <% @hojavida.licenses.each do |license| %>
+          <li><%= link_to license, license %></li>
+           <% end %>
+          </ul>
+          <% else %>
+          <p>Ninguna disponible</p>
+          <% end %>
+
+
+
     <%= link_to 'Editar', edit_hojavida_path(@hojavida),class:"btn btn-warning" %>
     <%= link_to 'Atras', hojavidas_path,class:"btn btn-primary" %>
     <br>
