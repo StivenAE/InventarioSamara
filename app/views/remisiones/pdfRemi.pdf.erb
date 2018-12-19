@@ -6,29 +6,59 @@
     <%=wicked_pdf_stylesheet_link_tag 'pdf'%>
   <body>
     <center>
-    <h2>Remisiones</h2>
+      <hr>
+      <%= wicked_pdf_image_tag '200elogo.png',style:"float:left; margin:30px;" %>
+    <center style="float:left; margin:30px;">
+    <p><b>Samara Cosmetics S.A.S</b><br>
+    Cra 54 No 72a 65<br>Telefono:225 84 32-444 84 38<br>info@samaracosmetics.com<br>IVA-REGIMEN COMUN<br>Agente retenedor</p>
     </center>
-    <div class="">
-      <%= wicked_pdf_image_tag '200klogo.png',style:"float:left; margin:0px;" %>
-    </div>
-    <center>
-    <h4>Samara Cosmetics S.A</h4>
-    <p>Cra 54 No 4 - 35<br>Telefono : 225 84 32 - 444 84 38<br>samaracosmetics@une.net.co<br>IVA-REGIMEN COMUN<br>Agente retenedor</p>
-    </center>
+    <table border="1" style="margin:50px;">
+			<tr>
+				<th colspan="2" width="90%">Remision<br> No 5555</th>
+			</tr>
+			<tr>
+				<th colspan="2">-- ORIGINAL --</th>
+			</tr>
+			<tr>
+				<td><center>Fecha Expediciòn<br> <script>
+            var mydate=new Date();
+            var year=mydate.getYear();
+            if (year < 1000)
+              year+=1900;
+              var day=mydate.getDay();
+              var month=mydate.getMonth()+1;
+                if (month<10)
+                  month="0"+month;
+                    var daym=mydate.getDate();
+                    if (daym<10)
+                      daym="0"+daym;
+            document.write("<small><font color='000000' face='Arial'><b>"+daym+"/"+month+"/"+year+"</b></font></small>")
+       </script></center></td>
+				<td><center>Fecha Vencimiento<br> 00/00/00</center></td>
+			</tr>
+		</table>
     <br>
+  </center>
         <% @clienteremis.each do |clienteremi|%>
-        <tr>
-          <td><%= clienteremi.nombre %></td>
-          <td><%= clienteremi.apellidos %></td>
-          <td><%= clienteremi.empresa %></td>
-          <td><%= clienteremi.nit %></td>
-          <td><%= clienteremi.ciudad %></td>
-          <td><%= clienteremi.direccion %></td>
-          <td><%= clienteremi.telefono %></td>
-          <td><%= clienteremi.forma_pago %></td>
-        </tr>
+          &nbsp; <b>Nombre :&nbsp;</b><%= clienteremi.nombre %>&nbsp;<%= clienteremi.apellidos %>
+          &nbsp; <b>Empresa :&nbsp;</b><%= clienteremi.empresa %>
+          &nbsp; <b>Nit/C.c :&nbsp;</b><%= clienteremi.nit %>
+          &nbsp; <b>Ciudad : &nbsp;</b><%= clienteremi.ciudad %>
+          &nbsp; <b>Direccion : &nbsp;</b><%= clienteremi.direccion %>
+          &nbsp; <b>Tel o Cel : &nbsp;</b><%= clienteremi.telefono %>
+          &nbsp; <b>Forma de pago : &nbsp;</b><%= clienteremi.forma_pago %>
+          &nbsp; <b>Vendedor : &nbsp;</b>Null
+          <center>
+          &nbsp; <b>&nbsp; Nº Orden/Pedido : &nbsp;</b>Null
+          </center>
         <% end %>
-
+<hr>
+<center>
+      <p><b>Distribuidor Exclusivo</b> :
+        <%= wicked_pdf_image_tag 'mawie150.png',style:"float:ringt; margin:5px;" %>
+        <%= wicked_pdf_image_tag 'Isabely50.png'%>
+        <%= wicked_pdf_image_tag 'lorhan.png' %></p>
+</center>
 
   </body>
 </html>

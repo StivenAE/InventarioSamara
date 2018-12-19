@@ -5,7 +5,51 @@
     <title></title>
   </head>
   <body>
-    <h3>Generar remision</h3>
-    <%= link_to 'PDF', remision_path(format: "pdf"), class:"btn btn-outline-danger mr-2" %>
+    <br>
+
+
+
+
+    <script type="text/javascript">
+      function mostrarValor(select) {
+        select.parentNode.querySelector("input[name=quantity]").value = select.value;
+      }
+    </script>
+
+    <center>
+    <div class="col-md-6">
+      <select class="custom-select" name="sel_quantity" id="sel_quantity" onChange="mostrarValor(this)">>
+        <option selected>Selecciona cliente</option>
+          <% @clienteremis.each do |clienteremi|%>
+          <option value="Nombre :<%= clienteremi.nombre %><%= clienteremi.apellidos %>
+          Empresa :<%= clienteremi.empresa %>
+          Nit/C.c :<%= clienteremi.nit %>
+          Ciudad : <%= clienteremi.ciudad %>
+          Direccion :<%= clienteremi.direccion %>
+          Tel o Cel :<%= clienteremi.telefono %>
+          Forma de pago :<%= clienteremi.forma_pago %>">
+          <%= clienteremi.nombre %>&nbsp;<%= clienteremi.apellidos %></option>
+        <% end %>
+      </select>
+      <br>
+      <input type="text" name="quantity" class="form-control" value="Datos cliente" />
+      <input type="hidden" name="quantity" class="form-control" value="Datos cliente" />
+      <hr>
+    </div>
+
+
+
+    <br>
+    <br>
+
+    <div class="col-md-6">
+      <div class="shadow-lg p-3 mb-5 bg-white ">
+        <center>
+      <h3>Generar Remision</h3>
+      <%= link_to 'PDF', remision_path(format: "pdf"), class:"btn btn-outline-danger mr-2" %>
+      </center>
+    </div>
+    </div>
+    </center>
   </body>
 </html>
