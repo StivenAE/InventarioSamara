@@ -18,24 +18,28 @@
 
     <center>
     <div class="col-md-6">
-      <select class="custom-select" name="sel_quantity" id="sel_quantity" onChange="mostrarValor(this)">>
+      <select class="custom-select" name="sel_quantity" id="sel_quantity" onChange="mostrarValor(this)">
         <option selected>Selecciona cliente</option>
           <% @clienteremis.each do |clienteremi|%>
-          <option value="Nombre :<%= clienteremi.nombre %><%= clienteremi.apellidos %>
-          Empresa :<%= clienteremi.empresa %>
-          Nit/C.c :<%= clienteremi.nit %>
-          Ciudad : <%= clienteremi.ciudad %>
-          Direccion :<%= clienteremi.direccion %>
-          Tel o Cel :<%= clienteremi.telefono %>
-          Forma de pago :<%= clienteremi.forma_pago %>">
-          <%= clienteremi.nombre %>&nbsp;<%= clienteremi.apellidos %></option>
+          <option value="<%= clienteremi.id %>"><%= clienteremi.nombre %>&nbsp;<%= clienteremi.apellidos %></option>
         <% end %>
       </select>
       <br>
       <input type="text" name="quantity" class="form-control" value="Datos cliente" />
-      <input type="hidden" name="quantity" class="form-control" value="Datos cliente" />
       <hr>
     </div>
+
+<div class="col-md-6">
+  <%= select_tag 'model[clienteremi]', options_from_collection_for_select(@clienteremis, :id,:nombre),class:"custom-select", id:"keyboard-select" %>
+  <%= button_tag "Add", class: "btn btn-primary keyboard-select-add" %>
+</div>
+
+<script type="text/javascript">
+  $('.keyboard-select-add').on 'click', ->
+      console.log( $('#keyboard-select :selected').data('font-code'))
+</script>
+
+
 
 
 
@@ -52,4 +56,6 @@
     </div>
     </center>
   </body>
+
+
 </html>

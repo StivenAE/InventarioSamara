@@ -10,7 +10,7 @@
       <%= wicked_pdf_image_tag '200elogo.png',style:"float:left; margin:30px;" %>
     <center style="float:left; margin:30px;">
     <p><b>Samara Cosmetics S.A.S</b><br>
-    Cra 54 No 72a 65<br>Telefono:225 84 32-444 84 38<br>info@samaracosmetics.com<br>IVA-REGIMEN COMUN<br>Agente retenedor</p>
+    Cra 54 No 72a 65<br>Telefono:2258432 -4448438<br>info@samaracosmetics.com<br>IVA-REGIMEN COMUN<br>Agente retenedor</p>
     </center>
     <table border="1" style="margin:50px;">
 			<tr>
@@ -20,7 +20,9 @@
 				<th colspan="2">-- ORIGINAL --</th>
 			</tr>
 			<tr>
-				<td><center>Fecha Expediciòn<br> <script>
+				<td><center>Fecha Expediciòn<br>
+
+        <script>
             var mydate=new Date();
             var year=mydate.getYear();
             if (year < 1000)
@@ -34,10 +36,11 @@
                       daym="0"+daym;
             document.write("<small><font color='000000' face='Arial'><b>"+daym+"/"+month+"/"+year+"</b></font></small>")
        </script></center></td>
+
 				<td><center>Fecha Vencimiento<br> 00/00/00</center></td>
 			</tr>
 		</table>
-    <br>
+    
   </center>
         <% @clienteremis.each do |clienteremi|%>
           &nbsp; <b>Nombre :&nbsp;</b><%= clienteremi.nombre %>&nbsp;<%= clienteremi.apellidos %>
