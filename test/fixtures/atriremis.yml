@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  referencia: MyString
+  descripcion: MyString
+  lote: MyString
+  iva: 1
+  cantidad: 1
+  unidad: MyString
+  valor_unitario: 1
+  valor_total: 1
+  remision: one
+
+two:
+  referencia: MyString
+  descripcion: MyString
+  lote: MyString
+  iva: 1
+  cantidad: 1
+  unidad: MyString
+  valor_unitario: 1
+  valor_total: 1
+  remision: two

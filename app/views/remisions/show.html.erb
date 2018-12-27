@@ -1,0 +1,69 @@
+<div  class="shadow-lg p-3 mb-5 bg-white rounded">
+  <center>
+    <h1>Detalles del registro</h1>
+  </center>
+</div>
+<center>
+
+<p>
+  <strong>Fecha Expedicion:</strong>
+  <%= @remision.fecha_expedicion %>
+  <strong>Fecha Vencimiento:</strong>
+  <%= @remision.fecha_vencimiento %>
+</p>
+
+<% @remision.atriremis.each do |atriremi|%>
+<p><strong>referencia : </strong><%= atriremi.referencia%>
+&nbsp;&nbsp;<strong>Descripcion :</strong><%=atriremi.descripcion%>
+&nbsp;&nbsp;<strong>Lote :</strong><%=atriremi.lote%>
+&nbsp;&nbsp;<strong>%IVA :</strong><%=atriremi.iva%>
+&nbsp;&nbsp;<strong>Cantidad :</strong><%=atriremi.cantidad%>
+&nbsp;&nbsp;<strong>Unidad :</strong><%=atriremi.unidad%>
+&nbsp;&nbsp;<strong>Valor unt :</strong><%=atriremi.valor_unitario%>
+&nbsp;&nbsp;<strong>Valor tol :</strong><%=atriremi.valor_total%></p>
+
+<%end%>
+
+<p>
+  <strong>Nota:</strong>
+  <%= @remision.nota %>%>
+</p>
+
+<p>
+  <strong>Valor Bruto:</strong>
+<%= @remision.valor_bruto %>
+</p>
+
+<p>
+  <strong>Descuento:</strong>
+  <%= @remision.descuento %>
+</p>
+
+<p>
+  <strong>Sub Total:</strong>
+  <%= @remision.subtotal %>
+</p>
+
+<p>
+  <strong>Iva:</strong>
+  <%= @remision.iva %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @remision.total %>
+</p>
+
+    <%= link_to 'Editar', edit_remision_path(@remision),class:"btn btn-warning" %>
+    <%= link_to 'Atras', remisions_path,class:"btn btn-primary" %>
+    <br>
+    <hr>
+    <div class="col-md-6">
+      <div class="shadow-lg p-3 mb-5 bg-white ">
+        <center>
+      <h3>Generar Remision</h3>
+      <%= link_to 'PDF', remisions_path(format: "pdf"), class:"btn btn-outline-danger mr-2" %>
+      </center>
+    </div>
+    </div>
+</center>

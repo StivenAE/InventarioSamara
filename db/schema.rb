@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_144226) do
+ActiveRecord::Schema.define(version: 2018_12_27_150617) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -39,6 +39,21 @@ ActiveRecord::Schema.define(version: 2018_12_14_144226) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["hojavida_id"], name: "index_archives_on_hojavida_id"
+  end
+
+  create_table "atriremis", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "referencia"
+    t.string "descripcion"
+    t.string "lote"
+    t.integer "iva"
+    t.integer "cantidad"
+    t.string "unidad"
+    t.integer "valor_unitario"
+    t.integer "valor_total"
+    t.bigint "remision_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["remision_id"], name: "index_atriremis_on_remision_id"
   end
 
   create_table "clienteremis", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -102,6 +117,19 @@ ActiveRecord::Schema.define(version: 2018_12_14_144226) do
     t.index ["hojavida_id"], name: "index_permisos_on_hojavida_id"
   end
 
+  create_table "remisions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "fecha_expedicion"
+    t.date "fecha_vencimiento"
+    t.text "nota"
+    t.integer "valor_bruto"
+    t.integer "descuento"
+    t.integer "subtotal"
+    t.integer "iva"
+    t.integer "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -122,6 +150,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_144226) do
   end
 
   add_foreign_key "archives", "hojavidas"
+  add_foreign_key "atriremis", "remisions"
   add_foreign_key "componentes", "hojavidas"
   add_foreign_key "licenses", "hojavidas"
   add_foreign_key "permisos", "hojavidas"
