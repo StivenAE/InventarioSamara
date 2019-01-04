@@ -6,7 +6,6 @@ class RemisionsController < ApplicationController
 
     def show
       @remision = Remision.find(params[:id])
-      @clienteremi = Clienteremi.all
       respond_to do |format|
         format.html
         format.json
@@ -15,9 +14,9 @@ class RemisionsController < ApplicationController
         end
       end
     end
+
     def new
       @remision = Remision.new
-      @clienteremis = Clienteremi.all
     end
 
     def edit
@@ -59,7 +58,7 @@ class RemisionsController < ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def remision_params
-        params.require(:remision).permit(:fecha_expedicion,:fecha_vencimiento,:nota,:valor_bruto,:descuento,:subtotal,:iva,:total,
+        params.require(:remision).permit(:fecha_expedicion,:fecha_vencimiento,:clienteremi_id,:nota,:valor_bruto,:descuento,:subtotal,:iva,:total,
         atriremis_attributes: [:id,:referencia, :descripcion, :lote, :iva, :cantidad, :unidad, :valor_unitario, :valor_total, :_destroy])
       end
 

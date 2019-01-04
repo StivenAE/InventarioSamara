@@ -9,19 +9,19 @@
     <h5><%= f.input :lote %></h5>
   </div>
     <div class=" col-md-2" style = "float: left">
-      <h5><%= f.input :iva %></h5>
+      <h5><%= f.input :iva, :input_html => { :value =>0.19}%></h5>
     </div>
     <div class=" col-md-2" style = "float: left">
       <h5><%= f.input :cantidad %></h5>
     </div>
     <div class=" col-md-2" style = "float: left">
-      <h5><%= f.input :unidad %></h5>
+      <h5><%= f.input :unidad, :input_html => { :value => 'UND' }%></h5>
     </div>
     <div class=" col-md-3" style = "float: left">
       <h5><%= f.input :valor_unitario %></h5>
     </div>
     <div class=" col-md-3" style = "float: left">
-    <h5><%= f.input :valor_total %></h5>
+    <h5><%= f.input :valor_total, :input_html =>{:value => 1}%></h5>
     </div>
     <div>
     <%= link_to_remove_association  "X",f,class:"btn btn-outline-danger" %>

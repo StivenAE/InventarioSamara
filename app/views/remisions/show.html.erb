@@ -5,12 +5,20 @@
 </div>
 <center>
 
+
+
 <p>
   <strong>Fecha Expedicion:</strong>
   <%= @remision.fecha_expedicion %>
   <strong>Fecha Vencimiento:</strong>
   <%= @remision.fecha_vencimiento %>
 </p>
+<p>
+  <strong>Cliente:</strong>
+  <%= @remision.clienteremi_id %>
+</p>
+
+
 
 <% @remision.atriremis.each do |atriremi|%>
 <p><strong>referencia : </strong><%= atriremi.referencia%>
@@ -21,7 +29,6 @@
 &nbsp;&nbsp;<strong>Unidad :</strong><%=atriremi.unidad%>
 &nbsp;&nbsp;<strong>Valor unt :</strong><%=atriremi.valor_unitario%>
 &nbsp;&nbsp;<strong>Valor tol :</strong><%=atriremi.valor_total%></p>
-
 <%end%>
 
 <p>

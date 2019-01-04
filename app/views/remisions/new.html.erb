@@ -12,37 +12,12 @@
     </div>
     <br>
 
-    <script type="text/javascript">
-      function mostrarValor(select) {
-        select.parentNode.querySelector("input[name=quantity]").value = select.value;
-      }
-    </script>
-
     <center>
-    <div class="col-md-6">
-      <select class="custom-select" name="sel_quantity" id="sel_quantity" onChange="mostrarValor(this)">
-        <option selected>Selecciona cliente</option>
-          <% @clienteremis.each do |clienteremi|%>
-          <option value="<%= clienteremi.id %>"><%= clienteremi.nombre %>&nbsp;<%= clienteremi.apellidos %></option>
-        <% end %>
-      </select>
+
+      <%=render 'form'%>
       <br>
-      <input type="text" name="quantity" class="form-control" value="Datos cliente"/>
-      <hr>
-    </div>
-
-<div class="col-md-6">
-  <%= select_tag 'model[clienteremi]', options_from_collection_for_select(@clienteremis, :id,:nombre),class:"custom-select", id:"keyboard-select" %>
-  <%= button_tag "Add", class: "btn btn-primary keyboard-select-add" %>
-</div>
-
-<script type="text/javascript">
-  $('#keyboard-select options').filter(':selected')
-</script>
-<%=render 'form'%>
-    <br>
-    <%= link_to 'Ver Remisiones', remisions_path, class:"btn btn-outline-danger mr-2" %>
-    <hr>  
+        <%= link_to 'Ver Remisiones', remisions_path, class:"btn btn-outline-danger mr-2" %>
+        <hr>
     </center>
   </body>
 
