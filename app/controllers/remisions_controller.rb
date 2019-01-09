@@ -10,7 +10,7 @@ class RemisionsController < ApplicationController
         format.html
         format.json
         format.pdf do
-            render template: "remisions/pdfRemi"
+            render template: "remisions/pdfRemi", pdf: 'pdfRemi'
         end
       end
     end

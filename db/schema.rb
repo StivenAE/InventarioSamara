@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_04_171516) do
+ActiveRecord::Schema.define(version: 2019_01_08_165803) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -128,7 +128,8 @@ ActiveRecord::Schema.define(version: 2019_01_04_171516) do
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "clienteremi_id"
+    t.bigint "clienteremi_id"
+    t.index ["clienteremi_id"], name: "index_remisions_on_clienteremi_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -155,4 +156,5 @@ ActiveRecord::Schema.define(version: 2019_01_04_171516) do
   add_foreign_key "componentes", "hojavidas"
   add_foreign_key "licenses", "hojavidas"
   add_foreign_key "permisos", "hojavidas"
+  add_foreign_key "remisions", "clienteremis"
 end

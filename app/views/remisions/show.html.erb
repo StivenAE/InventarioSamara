@@ -14,9 +14,12 @@
   <%= @remision.fecha_vencimiento %>
 </p>
 <p>
-  <strong>Cliente:</strong>
-  <%= @remision.clienteremi_id %>
-</p>
+  <strong>Cliente :</strong>
+  <%=@remision.clienteremi.nombre %>&nbsp;&nbsp;
+  <strong>Apellidos :</strong><%=@remision.clienteremi.apellidos%>
+  &nbsp;&nbsp;<strong>Empresa :</strong><%=@remision.clienteremi.empresa%>
+  &nbsp;&nbsp;<strong>Nit :</strong><%=@remision.clienteremi.nit%>
+  &nbsp;&nbsp;<strong>Ciudad :</strong><%=@remision.clienteremi.ciudad%></p>
 
 
 
@@ -33,7 +36,7 @@
 
 <p>
   <strong>Nota:</strong>
-  <%= @remision.nota %>%>
+  <%= @remision.nota %>
 </p>
 
 <p>
@@ -69,7 +72,7 @@
       <div class="shadow-lg p-3 mb-5 bg-white ">
         <center>
       <h3>Generar Remision</h3>
-      <%= link_to 'PDF', remisions_path(format: "pdf"), class:"btn btn-outline-danger mr-2" %>
+      <%= link_to 'PDF',remision_path(@remision, format: "pdf"), class:"btn btn-outline-danger mr-2" %>
       </center>
     </div>
     </div>

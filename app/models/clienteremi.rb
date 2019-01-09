@@ -1,5 +1,5 @@
 class Clienteremi < ApplicationRecord
-  belongs_to :remision
+  has_many :remisions
     validates_presence_of :nombre, :apellidos, :empresa, :nit, :ciudad, :direccion, :telefono, :forma_pago;
 
 

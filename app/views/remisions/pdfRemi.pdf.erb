@@ -4,59 +4,78 @@
     <meta charset="utf-8">
     <title> RemisionesSamaracosmetics</title>
     <%=wicked_pdf_stylesheet_link_tag 'pdf'%>
+    </head>
   <body>
     <center>
-      <hr>
       <%= wicked_pdf_image_tag '200elogo.png',style:"float:left; margin:30px;" %>
-    <center style="float:left; margin:30px;">
-    <p><b>Samara Cosmetics S.A.S</b><br>
+    <p style="float:left; margin:30px;"><b>Samara Cosmetics S.A.S</b><br>
     Cra 54 No 72a 65<br>Telefono:2258432 -4448438<br>info@samaracosmetics.com<br>IVA-REGIMEN COMUN<br>Agente retenedor</p>
-    </center>
-    <table border="1" style="margin:50px;">
+    <br>
+    <table border="1" style="margin:20px;">
 			<tr>
-				<th colspan="2" width="90%">Remision<br> No 5555</th>
+				<th colspan="2" width="90%">Remision<br> Noº <%= @remision.id %></th>
 			</tr>
 			<tr>
 				<th colspan="2">-- ORIGINAL --</th>
 			</tr>
 			<tr>
-				<td><center>Fecha Expediciòn<br>
+				<td><center><b>Fecha Expediciòn</b><br><%= @remision.fecha_expedicion %></center></td>
 
-        <script>
-            var mydate=new Date();
-            var year=mydate.getYear();
-            if (year < 1000)
-              year+=1900;
-              var day=mydate.getDay();
-              var month=mydate.getMonth()+1;
-                if (month<10)
-                  month="0"+month;
-                    var daym=mydate.getDate();
-                    if (daym<10)
-                      daym="0"+daym;
-            document.write("<small><font color='000000' face='Arial'><b>"+daym+"/"+month+"/"+year+"</b></font></small>")
-       </script></center></td>
-
-				<td><center>Fecha Vencimiento<br> 00/00/00</center></td>
+				<td><center><b>Fecha Vencimiento</b><br><%= @remision.fecha_vencimiento %></center></td>
 			</tr>
 		</table>
-    
   </center>
-        <% @clienteremis.each do |clienteremi|%>
-          &nbsp; <b>Nombre :&nbsp;</b><%= clienteremi.nombre %>&nbsp;<%= clienteremi.apellidos %>
-          &nbsp; <b>Empresa :&nbsp;</b><%= clienteremi.empresa %>
-          &nbsp; <b>Nit/C.c :&nbsp;</b><%= clienteremi.nit %>
-          &nbsp; <b>Ciudad : &nbsp;</b><%= clienteremi.ciudad %>
-          &nbsp; <b>Direccion : &nbsp;</b><%= clienteremi.direccion %>
-          &nbsp; <b>Tel o Cel : &nbsp;</b><%= clienteremi.telefono %>
-          &nbsp; <b>Forma de pago : &nbsp;</b><%= clienteremi.forma_pago %>
-          &nbsp; <b>Vendedor : &nbsp;</b>Null
-          <center>
-          &nbsp; <b>&nbsp; Nº Orden/Pedido : &nbsp;</b>Null
-          </center>
-        <% end %>
-<hr>
+  <div style="float:left;">
+  <strong>Nombre :</strong>&nbsp;&nbsp;<%=@remision.clienteremi.nombre %>&nbsp;<%=@remision.clienteremi.apellidos%>
+    &nbsp;&nbsp;&nbsp;&nbsp;<strong>Empresa :</strong>&nbsp;<%=@remision.clienteremi.empresa%>
+      &nbsp;&nbsp;&nbsp;&nbsp;<strong>Nit :</strong>&nbsp;<%=@remision.clienteremi.nit%>
+        &nbsp;&nbsp;<strong>Ciudad :</strong>&nbsp;<%=@remision.clienteremi.ciudad%>
+          &nbsp;&nbsp;<strong>Direccion :</strong>&nbsp;<%=@remision.clienteremi.direccion%>
+            &nbsp;&nbsp;<strong>Telefono :</strong>&nbsp;<%=@remision.clienteremi.telefono%>
+              &nbsp;&nbsp;<strong>Forma de pago :</strong>&nbsp;<%=@remision.clienteremi.forma_pago%>
+                &nbsp;&nbsp;<strong>Pedido :</strong>&nbsp;<%=@remision.clienteremi.pedido%>
+    </div>
+    <br>
+    <table border>
+  <tr>
+    <th width="10%">Referencia</th>
+    <th width="60%">Descripcion</th>
+    <th width="10%">Lote</th>
+    <th width="5%">%Iva</th>
+    <th width="8%">Cantidad</th>
+    <th width="8%">Unidad</th>
+    <th width="25%">Valor_Unt</th>
+    <th width="25%">Valor_Tol</th>
+  </tr>
+  <% @remision.atriremis.each do |atriremi|%>
+  <tr>
+    <td><center><%= atriremi.referencia%></center></td>
+    <td><center><%=atriremi.descripcion%></center></td>
+    <td><center><%=atriremi.lote%></center></td>
+    <td><center><%=atriremi.iva%></center></td>
+    <td><center><%=atriremi.cantidad%></center></td>
+    <td><center><%=atriremi.unidad%></center></td>
+    <td><center><%=atriremi.valor_unitario%></center></td>
+    <td><center><%=atriremi.valor_total%></center></td>
+  </tr>
+  <%end%>
+</table>
+<table border>
+	<tr>
+		<td rowspan=2 width="1000px">&nbsp;<b>NOTA :</b> &nbsp;&nbsp;<%= @remision.nota%></td>
+	    	<td>&nbsp;<b>Valor_Bruto :</b>&nbsp;<%= @remision.valor_bruto %><br>&nbsp;<b>Descuento &nbsp;&nbsp;:</b>&nbsp;<%= @remision.descuento %><br>
+            &nbsp;<b>Sub total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;<%= @remision.subtotal %><br>
+            &nbsp;<b>Iva &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; :</b>&nbsp;&nbsp;<%= @remision.iva %></td>
+	</tr>
+  <tr>
+		<td width="30%">&nbsp;<b>Total :&nbsp;&nbsp;&nbsp;&nbsp;</b><%= @remision.total %></td>
+	</tr>
+</table>
 <center>
+  <div>
+    <p style="float:left;"><b>_______________________________</b><br>Vendedor. Nit: 900.313.153-7</p>
+    <p style="float:left;"><b>_______________________________</b><br>Cliente. Nit/Cc: <%=@remision.clienteremi.nit%></p>
+  </div>
       <p><b>Distribuidor Exclusivo</b> :
         <%= wicked_pdf_image_tag 'mawie150.png',style:"float:ringt; margin:5px;" %>
         <%= wicked_pdf_image_tag 'Isabely50.png'%>

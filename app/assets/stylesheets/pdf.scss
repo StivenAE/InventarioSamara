@@ -1,9 +1,4 @@
-tr{
-  border-bottom: solid;
-  border-width:1xp;
-  border-color:black;
 
-}
 td,th{
   text-aling:left;
 }
@@ -12,6 +7,9 @@ th{
 }
 table{
   border-collapse: collapse;
+}
+td {
+  border:1px solid black;
 }
 table,tr,td,th,tbody,thead,tfoot{
     page-break-inside: avoid !important;
