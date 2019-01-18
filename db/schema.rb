@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_08_165803) do
+ActiveRecord::Schema.define(version: 2019_01_11_145425) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -45,14 +45,14 @@ ActiveRecord::Schema.define(version: 2019_01_08_165803) do
     t.string "referencia"
     t.string "descripcion"
     t.string "lote"
-    t.integer "iva"
+    t.decimal "iva", precision: 10, scale: 2
     t.integer "cantidad"
     t.string "unidad"
     t.integer "valor_unitario"
-    t.integer "valor_total"
     t.bigint "remision_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "valor_total"
     t.index ["remision_id"], name: "index_atriremis_on_remision_id"
   end
 

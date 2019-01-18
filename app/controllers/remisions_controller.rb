@@ -17,6 +17,7 @@ class RemisionsController < ApplicationController
 
     def new
       @remision = Remision.new
+      Remision.find(1).atriremis.reduce(0) { |suma, atriremi| suma += atriremi.valor_total }
     end
 
     def edit

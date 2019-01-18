@@ -16,9 +16,9 @@
               <button class="dropdown-toggle btn btn-outline-success mr-2" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Remisiones</button>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <%= link_to 'Crear cliente', new_clienteremi_path, class:"dropdown-item" %>
-                  <div class="dropdown-divider"></div>
                   <%= link_to 'Generar remision', new_remision_path, class:"dropdown-item" %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to 'Crear cliente', new_clienteremi_path, class:"dropdown-item" %>
                   <%= link_to 'Remisiones generadas', remisions_path, class:"dropdown-item" %>
                 </div>
            </li>
@@ -53,20 +53,18 @@
           <div class="navbar-nav mr-auto text-center">
             <%= link_to "Inicio", root_path,{class:"btn btn-outline-primary mr-4"} %>
             <%= link_to "Registro equipo", hojavidas_path,{class:"btn btn-outline-success mr-2"} %>
-            <button class="btn btn-outline-success mr-2" type="button">Reporte problema</button>
-            <button class="btn btn-outline-success mr-2" type="button">Pedidos Maquilas</button>
-            <button class="btn btn-outline-success mr-2" type="button">Ingreso Maquila</button>
 
             <li class="nav-item dropdown">
               <button class="dropdown-toggle btn btn-outline-success mr-2" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Remisiones</button>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <%= link_to 'Crear cliente', new_clienteremi_path, class:"dropdown-item" %>
-                  <div class="dropdown-divider"></div>
                   <%= link_to 'Generar remision', new_remision_path, class:"dropdown-item" %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to 'Crear cliente', new_clienteremi_path, class:"dropdown-item" %>
                   <%= link_to 'Remisiones generadas', remisions_path, class:"dropdown-item" %>
                 </div>
            </li>
+           <button class="btn btn-outline-success mr-2" type="button">Reporte problema</button>
 
           </div>
 

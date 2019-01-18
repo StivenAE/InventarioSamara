@@ -19,7 +19,7 @@
 				<th colspan="2">-- ORIGINAL --</th>
 			</tr>
 			<tr>
-				<td><center><b>Fecha Expediciòn</b><br><%= @remision.fecha_expedicion %></center></td>
+				<td><center><b>Fecha Expedición</b><br><%= @remision.fecha_expedicion %></center></td>
 
 				<td><center><b>Fecha Vencimiento</b><br><%= @remision.fecha_vencimiento %></center></td>
 			</tr>
@@ -63,18 +63,19 @@
 <table border>
 	<tr>
 		<td rowspan=2 width="1000px">&nbsp;<b>NOTA :</b> &nbsp;&nbsp;<%= @remision.nota%></td>
-	    	<td>&nbsp;<b>Valor_Bruto :</b>&nbsp;<%= @remision.valor_bruto %><br>&nbsp;<b>Descuento &nbsp;&nbsp;:</b>&nbsp;<%= @remision.descuento %><br>
-            &nbsp;<b>Sub total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;<%= @remision.subtotal %><br>
-            &nbsp;<b>Iva &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; :</b>&nbsp;&nbsp;<%= @remision.iva %></td>
+    <td>&nbsp;<b>Valor_Bruto :</b>&nbsp;<%= @remision.valor_bruto %><br>
+        &nbsp;<b>Descuento &nbsp;&nbsp;:</b>&nbsp;<%= @remision.descuento %><br>
+        &nbsp;<b>Sub total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;<%= @remision.subtotal %><br>
+        &nbsp;<b>Iva &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; :</b>&nbsp;&nbsp;<%= @remision.iva %></td>
 	</tr>
   <tr>
-		<td width="30%">&nbsp;<b>Total :&nbsp;&nbsp;&nbsp;&nbsp;</b><%= @remision.total %></td>
+		<td width="30%">&nbsp;<b>Total &emsp; &emsp; &nbsp; :&nbsp;</b><%= @remision.total %></td>
 	</tr>
 </table>
 <center>
   <div>
-    <p style="float:left;"><b>_______________________________</b><br>Vendedor. Nit: 900.313.153-7</p>
-    <p style="float:left;"><b>_______________________________</b><br>Cliente. Nit/Cc: <%=@remision.clienteremi.nit%></p>
+    <p style="float:left;"><b>____________________ <br>Vendedor.</b> <br>Nit: 900.313.153-7</p>
+    <p style="float:left;"><b>&nbsp; ____________________<br>Recib/Cliente.</b> <br>Nit/Cc: <%=@remision.clienteremi.nit%></p>
   </div>
       <p><b>Distribuidor Exclusivo</b> :
         <%= wicked_pdf_image_tag 'mawie150.png',style:"float:ringt; margin:5px;" %>
