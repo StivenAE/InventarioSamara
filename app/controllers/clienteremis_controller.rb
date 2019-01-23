@@ -4,7 +4,7 @@ class ClienteremisController < ApplicationController
   # GET /clienteremis
   # GET /clienteremis.json
   def index
-    @clienteremis = Clienteremi.all
+    @clienteremis = Clienteremi.all.paginate(:page => params[:page], :per_page =>10)
   end
 
   # GET /clienteremis/1

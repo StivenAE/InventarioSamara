@@ -39,5 +39,10 @@
   </tbody>
 </table>
 <br>
+<div class="d-flex justify-content-center">
+  <%=will_paginate @remision,renderer: WillPaginate::ActionView::BootstrapLinkRenderer,previous_label:"Anterior ",next_label:" Siguiente",
+  inner_window: 1, outer_window: 0 %>
+</div>
+<br>
 
 <footer><%= render "inicio/footer"%></footer>

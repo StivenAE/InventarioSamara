@@ -43,3 +43,9 @@
 </table>
 
 <br>
+<div class="d-flex justify-content-center">
+  <%=will_paginate @clienteremi,renderer: WillPaginate::ActionView::BootstrapLinkRenderer,previous_label:"Anterior ",next_label:" Siguiente",
+  inner_window: 1, outer_window: 0 %>
+</div>
+<br>
+<footer><%= render 'inicio/footer'%></footer>

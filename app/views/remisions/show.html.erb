@@ -30,8 +30,8 @@
 &nbsp;&nbsp;<strong>%IVA :</strong><%=atriremi.iva%>
 &nbsp;&nbsp;<strong>Cantidad :</strong><%=atriremi.cantidad%>
 &nbsp;&nbsp;<strong>Unidad :</strong><%=atriremi.unidad%>
-&nbsp;&nbsp;<strong>Valor unt :</strong><%=atriremi.valor_unitario%>
-&nbsp;&nbsp;<strong>Valor tol :</strong><%=atriremi.valor_total%></p>
+&nbsp;&nbsp;<strong>Valor unt :</strong><%=number_with_delimiter(atriremi.valor_unitario, :delimiter => ',')%>
+&nbsp;&nbsp;<strong>Valor tol :</strong><%=number_with_delimiter(atriremi.valor_total, :delimiter => ',')%></p>
 <%end%>
 
 <p>
@@ -41,27 +41,27 @@
 
 <p>
   <strong>Valor Bruto:</strong>
-<%= @remision.valor_bruto %>
+<%= number_with_delimiter(@remision.valor_bruto, :delimiter => ',') %>
 </p>
 
 <p>
   <strong>Descuento:</strong>
-  <%= @remision.descuento %>
+  <%= number_with_delimiter(@remision.descuento , :delimiter => ',') %>
 </p>
 
 <p>
   <strong>Sub Total:</strong>
-  <%= @remision.subtotal %>
+  <%= number_with_delimiter(@remision.subtotal , :delimiter => ',') %>
 </p>
 
 <p>
   <strong>Iva:</strong>
-  <%= @remision.iva %>
+  <%= number_with_delimiter(@remision.iva , :delimiter => ',') %>
 </p>
 
 <p>
   <strong>Total:</strong>
-  <%= @remision.total %>
+  <%= number_with_delimiter(@remision.total , :delimiter => ',') %>
 </p>
 
     <%= link_to 'Editar', edit_remision_path(@remision),class:"btn btn-warning" %>

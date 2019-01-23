@@ -1,7 +1,7 @@
 class RemisionsController < ApplicationController
 
     def index
-      @remisions = Remision.all
+      @remisions = Remision.all.paginate(:page => params[:page], :per_page =>10)
     end
 
     def show
@@ -17,6 +17,8 @@ class RemisionsController < ApplicationController
 
     def new
       @remision = Remision.new
+    end
+    def suma_total
       Remision.find(1).atriremis.reduce(0) { |suma, atriremi| suma += atriremi.valor_total }
     end
 

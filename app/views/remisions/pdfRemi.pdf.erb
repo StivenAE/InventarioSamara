@@ -13,7 +13,7 @@
     <br>
     <table border="1" style="margin:20px;">
 			<tr>
-				<th colspan="2" width="90%">Remision<br> Noº <%= @remision.id %></th>
+				<th colspan="2" width="90%">Remisión de venta<br> Noº <%= @remision.id %></th>
 			</tr>
 			<tr>
 				<th colspan="2">-- ORIGINAL --</th>
@@ -55,21 +55,21 @@
     <td><center><%=atriremi.iva%></center></td>
     <td><center><%=atriremi.cantidad%></center></td>
     <td><center><%=atriremi.unidad%></center></td>
-    <td><center><%=atriremi.valor_unitario%></center></td>
-    <td><center><%=atriremi.valor_total%></center></td>
+    <td><center><%=number_with_delimiter(atriremi.valor_unitario, :delimiter => ',')%></center></td>
+    <td><center><%=number_with_delimiter(atriremi.valor_total, :delimiter => ',')%></center></td>
   </tr>
   <%end%>
 </table>
 <table border>
 	<tr>
 		<td rowspan=2 width="1000px">&nbsp;<b>NOTA :</b> &nbsp;&nbsp;<%= @remision.nota%></td>
-    <td>&nbsp;<b>Valor_Bruto :</b>&nbsp;<%= @remision.valor_bruto %><br>
-        &nbsp;<b>Descuento &nbsp;&nbsp;:</b>&nbsp;<%= @remision.descuento %><br>
-        &nbsp;<b>Sub total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;<%= @remision.subtotal %><br>
-        &nbsp;<b>Iva &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; :</b>&nbsp;&nbsp;<%= @remision.iva %></td>
+    <td>&nbsp;<b>Valor_Bruto :</b>&nbsp;$<%= number_with_delimiter(@remision.valor_bruto, :delimiter => ',') %><br>
+        &nbsp;<b>Descuento &nbsp;&nbsp;:</b>&nbsp;$<%= number_with_delimiter(@remision.descuento , :delimiter => ',') %><br>
+        &nbsp;<b>Sub total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;$<%= number_with_delimiter(@remision.subtotal , :delimiter => ',') %><br>
+        &nbsp;<b>Iva &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; :</b>&nbsp;&nbsp;$<%= number_with_delimiter(@remision.iva , :delimiter => ',') %></td>
 	</tr>
   <tr>
-		<td width="30%">&nbsp;<b>Total &emsp; &emsp; &nbsp; :&nbsp;</b><%= @remision.total %></td>
+		<td width="30%">&nbsp;<b>Total &emsp; &emsp; &nbsp; :&nbsp;</b>$<%= number_with_delimiter(@remision.total , :delimiter => ',') %></td>
 	</tr>
 </table>
 <center>

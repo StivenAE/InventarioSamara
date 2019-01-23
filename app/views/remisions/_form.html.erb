@@ -17,7 +17,7 @@
 
         <div class="form-group col-md-12">
           <h5>Cliente</h5>
-          <%= collection_select(:remision,:clienteremi_id,Clienteremi.all,:id,:client_order,{:prompt => 'Seleccionar cliente'},class:"custom-select col-md-12")%>
+          <%= collection_select(:remision,:clienteremi_id,Clienteremi.order(:nombre),:id,:client_order,{:prompt => 'Seleccionar cliente'},class:"custom-select col-md-12")%>
           </div>
           </div>
           <br>

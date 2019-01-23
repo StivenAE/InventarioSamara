@@ -4,6 +4,6 @@ class Clienteremi < ApplicationRecord
 
 
       def client_order
-        "#{nombre.first}. #{apellidos}. #{empresa}"
+        "#{nombre}#{apellidos}. #{empresa}"
       end
 end
