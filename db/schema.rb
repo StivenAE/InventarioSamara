@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_11_145425) do
+ActiveRecord::Schema.define(version: 2019_02_13_123233) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -45,14 +45,14 @@ ActiveRecord::Schema.define(version: 2019_01_11_145425) do
     t.string "referencia"
     t.string "descripcion"
     t.string "lote"
-    t.decimal "iva", precision: 10, scale: 2
+    t.integer "iva"
     t.integer "cantidad"
     t.string "unidad"
     t.integer "valor_unitario"
+    t.integer "valor_total"
     t.bigint "remision_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "valor_total"
     t.index ["remision_id"], name: "index_atriremis_on_remision_id"
   end
 
@@ -130,6 +130,17 @@ ActiveRecord::Schema.define(version: 2019_01_11_145425) do
     t.datetime "updated_at", null: false
     t.bigint "clienteremi_id"
     t.index ["clienteremi_id"], name: "index_remisions_on_clienteremi_id"
+  end
+
+  create_table "reportes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "equipo"
+    t.string "area_funcionamiento"
+    t.string "correo"
+    t.text "descripcion_problema"
+    t.date "fecha"
+    t.string "intervencion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

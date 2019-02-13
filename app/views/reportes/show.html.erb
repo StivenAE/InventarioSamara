@@ -1,0 +1,41 @@
+<div  class="shadow-lg p-3 mb-5 bg-white rounded">
+  <center>
+    <h1>Detalles del reporte</h1>
+  </center>
+</div>
+<center>
+<p>
+  <strong>Equipo:</strong>
+  <%= @reporte.equipo %>
+</p>
+
+<p>
+  <strong>Area funcionamiento:</strong>
+  <%= @reporte.area_funcionamiento %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @reporte.correo %>
+</p>
+
+<p>
+  <strong>Descripcion problema:</strong>
+  <%= @reporte.descripcion_problema %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @reporte.fecha %>
+</p>
+
+<p>
+  <strong>Intervencion:</strong>
+  <%= @reporte.intervencion %>
+</p>
+
+<%= link_to 'Editar', edit_reporte_path(@reporte),class:"btn btn-warning" %>
+<%= link_to 'Inicio', reportes_path,class:"btn btn-primary" %>
+<br>
+<hr>
+</center>

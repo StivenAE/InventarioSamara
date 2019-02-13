@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reportes
   resources :clienteremis
   resources :licenses
   resources :hojavidas

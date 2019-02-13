@@ -1,0 +1,40 @@
+<div  class="shadow-lg p-3 mb-5 bg-white rounded">
+  <center>
+    <h1>Reportes Generados</h1>
+  </center>
+</div>
+
+<table class="table table-hover table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Equipo</th>
+      <th>Area funcionamiento</th>
+      <th>Correo</th>
+      <th>Descripcion problema</th>
+      <th>Fecha</th>
+      <th>Intervencion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <div class="d-flex flex-row-reverse bd-highligth p-1">
+        <%= link_to 'Nuevo reporte', new_reporte_path, class:"btn btn-success mr-2" %>
+    </div>
+
+    <% @reportes.each do |reporte| %>
+      <tr>
+        <td><%= reporte.equipo %></td>
+        <td><%= reporte.area_funcionamiento %></td>
+        <td><%= reporte.correo %></td>
+        <td><%= reporte.descripcion_problema %></td>
+        <td><%= reporte.fecha %></td>
+        <td><%= reporte.intervencion %></td>
+        <td><%= link_to 'Editar', edit_reporte_path(reporte), class:"btn btn-warning" %></td>
+        <td><%= link_to 'X', reporte, method: :delete, data: {title:'Eliminar',
+          confirm: 'Esta seguro de eliminar el registro?',cancel:'Cancelar',commit:'Eliminar'}, class:"btn btn-outline-danger " %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
