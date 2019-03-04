@@ -7,18 +7,15 @@
 <div style="display:inline-block;" >
   <form>
         <div class="form-row">
-          <div class="form-group col-md-6">
+
+          <div class="form-group col-md-12">
             <h5><%= f.input :fecha_expedicion %></h5>
-        </div>
-        <div class="form-group col-md-6">
-          <h5><%= f.input :fecha_vencimiento %></h5>
-        </div>
-
-
-        <div class="form-group col-md-12">
-          <h5>Cliente</h5>
-          <%= collection_select(:remision,:clienteremi_id,Clienteremi.order(:nombre),:id,:client_order,{:prompt => 'Seleccionar cliente'},class:"custom-select col-md-12")%>
           </div>
+
+            <div class="form-group col-md-12">
+              <h5>Cliente</h5>
+              <%= collection_select(:remision,:clienteremi_id,Clienteremi.order(:nombre),:id,:client_order,{:prompt => 'Seleccionar cliente'},class:"custom-select col-md-12")%>
+            </div>
           </div>
           <br>
 
@@ -43,11 +40,6 @@
               <div class="shadow-none p-3 mb-5 bg-light rounded">
                 <h5><%= f.input :nota %></h5>
               </div>
-              <center>
-                <div class="form-group col-md-4">
-                  <h5><%= f.input :descuento%></h5>
-                </div>
-              </center>
             </div>
       </div>
 

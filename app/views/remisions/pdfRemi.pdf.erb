@@ -13,15 +13,13 @@
     <br>
     <table border="1" style="margin:20px;">
 			<tr>
-				<th colspan="2" width="90%">Remisión de venta<br> Noº <%= @remision.id %></th>
+				<th colspan="2" width="90%">Remisión<br> Noº <%= @remision.id %></th>
 			</tr>
 			<tr>
 				<th colspan="2">-- ORIGINAL --</th>
 			</tr>
 			<tr>
 				<td><center><b>Fecha Expedición</b><br><%= @remision.fecha_expedicion %></center></td>
-
-				<td><center><b>Fecha Vencimiento</b><br><%= @remision.fecha_vencimiento %></center></td>
 			</tr>
 		</table>
   </center>
@@ -41,35 +39,23 @@
     <th width="10%">Referencia</th>
     <th width="60%">Descripcion</th>
     <th width="10%">Lote</th>
-    <th width="5%">%Iva</th>
     <th width="8%">Cantidad</th>
     <th width="8%">Unidad</th>
-    <th width="25%">Valor_Unt</th>
-    <th width="25%">Valor_Tol</th>
   </tr>
   <% @remision.atriremis.each do |atriremi|%>
   <tr>
     <td><center><%= atriremi.referencia%></center></td>
     <td><center><%=atriremi.descripcion%></center></td>
     <td><center><%=atriremi.lote%></center></td>
-    <td><center><%=atriremi.iva%></center></td>
     <td><center><%=atriremi.cantidad%></center></td>
     <td><center><%=atriremi.unidad%></center></td>
-    <td><center><%=number_with_delimiter(atriremi.valor_unitario, :delimiter => ',')%></center></td>
-    <td><center><%=number_with_delimiter(atriremi.valor_total, :delimiter => ',')%></center></td>
   </tr>
   <%end%>
 </table>
 <table border>
 	<tr>
 		<td rowspan=2 width="1000px">&nbsp;<b>NOTA :</b> &nbsp;&nbsp;<%= @remision.nota%></td>
-    <td>&nbsp;<b>Valor_Bruto :</b>&nbsp;$<%= number_with_delimiter(@remision.valor_bruto, :delimiter => ',') %><br>
-        &nbsp;<b>Descuento &nbsp;&nbsp;:</b>&nbsp;$<%= number_with_delimiter(@remision.descuento , :delimiter => ',') %><br>
-        &nbsp;<b>Sub total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>&nbsp;$<%= number_with_delimiter(@remision.subtotal , :delimiter => ',') %><br>
-        &nbsp;<b>Iva &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; :</b>&nbsp;&nbsp;$<%= number_with_delimiter(@remision.iva , :delimiter => ',') %></td>
-	</tr>
-  <tr>
-		<td width="30%">&nbsp;<b>Total &emsp; &emsp; &nbsp; :&nbsp;</b>$<%= number_with_delimiter(@remision.total , :delimiter => ',') %></td>
+
 	</tr>
 </table>
 <center>
@@ -77,7 +63,7 @@
     <p style="float:left;"><b>____________________ <br>Vendedor.</b> <br>Nit: 900.313.153-7</p>
     <p style="float:left;"><b>&nbsp; ____________________<br>Recib/Cliente.</b> <br>Nit/Cc: <%=@remision.clienteremi.nit%></p>
   </div>
-      <p><b>Distribuidor Exclusivo</b> :
+      <p><b>Nuestras marcas :</b> :
         <%= wicked_pdf_image_tag 'mawie150.png',style:"float:ringt; margin:5px;" %>
         <%= wicked_pdf_image_tag 'Isabely50.png'%>
         <%= wicked_pdf_image_tag 'lorhan.png' %></p>
