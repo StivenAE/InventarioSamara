@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <div  class="shadow-lg p-3 mb-5 bg-white rounded">
   <center>
     <h1>Clientes de remisiones</h1>
@@ -15,7 +14,6 @@
       <th>Ciudad</th>
       <th>Direccion</th>
       <th>Telefono</th>
-      <th>Forma pago</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -33,10 +31,7 @@
         <td><%= clienteremi.ciudad %></td>
         <td><%= clienteremi.direccion %></td>
         <td><%= clienteremi.telefono %></td>
-        <td><%= clienteremi.forma_pago %></td>
         <td><%= link_to 'Editar', edit_clienteremi_path(clienteremi), class:"btn btn-warning" %></td>
-        <td><%= link_to 'X', clienteremi, method: :delete, data: {title:'Eliminar',
-          confirm: 'Esta seguro de eliminar el registro?',cancel:'Cancelar',commit:'Eliminar'}, class:"btn btn-outline-danger " %></td>
       </tr>
     <% end %>
   </tbody>

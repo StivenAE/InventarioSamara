@@ -28,7 +28,7 @@ class ClienteremisController < ApplicationController
 
     respond_to do |format|
       if @clienteremi.save
-        format.html { redirect_to @clienteremi, notice: 'Cliente creado correctamente' }
+        format.html { redirect_to clienteremis_path, notice: 'Cliente creado correctamente' }
         format.json { render :show, status: :created, location: @clienteremi }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ClienteremisController < ApplicationController
   def update
     respond_to do |format|
       if @clienteremi.update(clienteremi_params)
-        format.html { redirect_to @clienteremi, notice: 'Cliente actualizado correctamente.' }
+        format.html { redirect_to clienteremis_path, notice: 'Cliente actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @clienteremi }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class ClienteremisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clienteremi_params
-      params.require(:clienteremi).permit(:nombre, :apellidos, :empresa, :nit, :ciudad, :direccion, :telefono, :forma_pago, :pedido)
+      params.require(:clienteremi).permit(:nombre, :apellidos, :empresa, :nit, :ciudad, :direccion, :telefono, :pedido)
     end
 end

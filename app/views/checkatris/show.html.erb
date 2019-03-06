@@ -1,0 +1,18 @@
+<div  class="shadow-lg p-3 mb-5 bg-white rounded">
+  <center>
+    <h1>Detalles del producto</h1>
+  </center>
+</div>
+<center>
+<p>
+  <strong>Referencia:</strong>
+  <%= @checkatri.referencia %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @checkatri.descripcion %>
+</p>
+<%= link_to 'Editar', edit_checkatri_path(@checkatri) ,class:"btn btn-warning" %>
+<%= link_to 'Inicio', checkatris_path,class:"btn btn-primary" %>
+</center>

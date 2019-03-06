@@ -18,9 +18,7 @@ class RemisionsController < ApplicationController
     def new
       @remision = Remision.new
     end
-    def suma_total
-      Remision.find(1).atriremis.reduce(0) { |suma, atriremi| suma += atriremi.valor_total }
-    end
+
 
     def edit
       @remision = Remision.find(params[:id])
@@ -62,7 +60,8 @@ class RemisionsController < ApplicationController
       # Never trust parameters from the scary internet, only allow the white list through.
       def remision_params
         params.require(:remision).permit(:fecha_expedicion,:fecha_vencimiento,:clienteremi_id,:nota,:valor_bruto,:descuento,:subtotal,:iva,:total,
-        atriremis_attributes: [:id,:referencia, :descripcion, :lote, :iva, :cantidad, :unidad, :valor_unitario, :valor_total, :_destroy])
+        atriremis_attributes: [:id,:referencia, :descripcion, :lote, :iva, :cantidad, :unidad, :valor_unitario, :valor_total, :_destroy],
+        atrichecks_attributes: [:id,:referencia,:descripcion,:checkatri_id,:_destroy])
       end
 
 end

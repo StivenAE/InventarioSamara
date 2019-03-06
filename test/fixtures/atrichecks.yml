@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lote: MyString
+  cantidad: 1
+  unidad: MyString
+  remision: one
+
+two:
+  lote: MyString
+  cantidad: 1
+  unidad: MyString
+  remision: two

@@ -29,6 +29,13 @@
 &nbsp;&nbsp;<strong>Unidad :</strong><%=atriremi.unidad%></p>
 <%end%>
 
+
+<% @remision.atrichecks.each do |atricheck|%>
+&nbsp;&nbsp;<strong>Lote :</strong><%=atricheck.lote%>
+&nbsp;&nbsp;<strong>Cantidad :</strong><%=atricheck.cantidad%>
+&nbsp;&nbsp;<strong>Unidad :</strong><%=atricheck.unidad%></p>
+<%end%>
+
 <p>
   <strong>Nota:</strong>
   <%= @remision.nota %>

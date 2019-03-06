@@ -32,8 +32,23 @@
               </div>
             </div>
           </div>
+          <br>
 
-        <br>
+          <div class="col-md-12">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+            <h4>Productos a remisionar</h4>
+            </div>
+            <div id='atributos'>
+              <%= f.simple_fields_for :atrichecks do |atricheck|%>
+              <%=render 'atrichecks_fields', :f => atrichecks%>
+              <%end%>
+              <div class='links'>
+                <%= link_to_add_association 'Agregar', f, :atrichecks,partial: 'atrichecks_fields',class:"btn btn-outline-info"%>
+              </div>
+            </div>
+          </div>
+          <br>
+
         <hr><hr>
         <div class="form-row">
             <div class="form-group col-md-12">

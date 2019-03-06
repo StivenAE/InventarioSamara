@@ -3,46 +3,43 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <center>
-  <form >
-    <div class="form-row">
-        <div class="form-group col-md-5">
-            <%= f.input :nombre, placeholder:"Nombre" %>
+<div style="display:inline-block;" >
+    <form >
+      <div class="form-row">
+          <div class="form-group col-md-5">
+              <%= f.input :nombre, placeholder:"Nombre" %>
+          </div>
+
+          <div class="form-group col-md-7">
+            <%= f.input :apellidos, placeholder:"Apellidos" %>
+          </div>
+
+          <div class="form-group col-md-4">
+            <%= f.input :empresa, placeholder:"Empresa" %>
+          </div>
+
+          <div class="form-group col-md-4">
+            <%= f.input :nit, placeholder:"Nit o Cc" %>
+          </div>
+
+          <div class="form-group col-md-4">
+            <%= f.input :ciudad, placeholder:"Ciudad" %>
+          </div>
+
+          <div class="form-group col-md-6  ">
+            <%= f.input :direccion, placeholder:"Direccion" %>
+          </div>
+
+          <div class="form-group col-md-6  ">
+            <%= f.input :telefono, placeholder:"Telefono o Celular " %>
+          </div>
+
         </div>
+    </form>
 
-        <div class="form-group col-md-7">
-          <%= f.input :apellidos, placeholder:"Apellidos" %>
-        </div>
-
-        <div class="form-group col-md-4">
-          <%= f.input :empresa, placeholder:"Empresa" %>
-        </div>
-
-        <div class="form-group col-md-4">
-          <%= f.input :nit, placeholder:"Nit o Cc" %>
-        </div>
-
-        <div class="form-group col-md-4">
-          <%= f.input :ciudad, placeholder:"Ciudad" %>
-        </div>
-
-        <div class="form-group col-md-4  ">
-          <%= f.input :direccion, placeholder:"Direccion" %>
-        </div>
-
-        <div class="form-group col-md-4  ">
-          <%= f.input :telefono, placeholder:"Telefono o Celular " %>
-        </div>
-
-        <div class="form-group col-md-4  ">
-          <%= f.input :forma_pago, placeholder:"Forma de pago" %>
-        </div>
-
-      </div>
-  </form>
-
-  <div class="form-actions">
-    <%= f.button :submit,"Guardar",class:"btn btn-success col-md-2" %>
-  </div>
-<% end %>
-
+    <div class="form-actions">
+      <%= f.button :submit,"Guardar",class:"btn btn-success col-md-3" %>
+    </div>
+  <% end %>
+</div>
 </center>

@@ -1,0 +1,33 @@
+<div  class="shadow-lg p-3 mb-5 bg-white rounded">
+  <center>
+    <h1>Productos de remisiones</h1>
+  </center>
+</div>
+
+<table class="table table-hover table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Referencia</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <div class="d-flex flex-row-reverse bd-highligth p-1">
+      <%= link_to 'Nuevo registro', new_checkatri_path, class:"btn btn-success mr-2" %>
+  </div>
+  <tbody>
+    <% @checkatris.each do |checkatri| %>
+      <tr>
+        <td><%= checkatri.referencia %></td>
+        <td><%= checkatri.descripcion %></td>
+        <td><%= link_to 'Editar', edit_checkatri_path(checkatri), class:"btn btn-warning" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="d-flex justify-content-center">
+<%=will_paginate @checkatri,renderer: WillPaginate::ActionView::BootstrapLinkRenderer,previous_label:"Anterior ",next_label:" Siguiente",
+  inner_window: 1, outer_window: 0 %>
+</div>

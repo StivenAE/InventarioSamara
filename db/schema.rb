@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_213154) do
+ActiveRecord::Schema.define(version: 2019_03_06_203430) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,18 @@ ActiveRecord::Schema.define(version: 2019_03_04_213154) do
     t.index ["hojavida_id"], name: "index_archives_on_hojavida_id"
   end
 
+  create_table "atrichecks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "lote"
+    t.integer "cantidad"
+    t.string "unidad"
+    t.bigint "remision_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "checkatri_id"
+    t.index ["checkatri_id"], name: "index_atrichecks_on_checkatri_id"
+    t.index ["remision_id"], name: "index_atrichecks_on_remision_id"
+  end
+
   create_table "atriremis", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "referencia"
     t.string "descripcion"
@@ -53,6 +65,13 @@ ActiveRecord::Schema.define(version: 2019_03_04_213154) do
     t.index ["remision_id"], name: "index_atriremis_on_remision_id"
   end
 
+  create_table "checkatris", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "referencia"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "clienteremis", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nombre"
     t.string "apellidos"
@@ -61,8 +80,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_213154) do
     t.string "ciudad"
     t.string "direccion"
     t.string "telefono"
-    t.string "forma_pago"
-    t.string "pedido"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -154,6 +171,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_213154) do
   end
 
   add_foreign_key "archives", "hojavidas"
+  add_foreign_key "atrichecks", "checkatris"
+  add_foreign_key "atrichecks", "remisions"
   add_foreign_key "atriremis", "remisions"
   add_foreign_key "componentes", "hojavidas"
   add_foreign_key "licenses", "hojavidas"
