@@ -1,5 +1,5 @@
 class Checkatri < ApplicationRecord
-  has_many :atrichecks
+belongs_to :remision
 
   def product_order
     "#{referencia} #{descripcion}"

@@ -40,7 +40,7 @@
             </div>
             <div id='atributos'>
               <%= f.simple_fields_for :atrichecks do |atricheck|%>
-              <%=render 'atrichecks_fields', :f => atrichecks%>
+              <%=render 'atrichecks_fields', :f => atricheck%>
               <%end%>
               <div class='links'>
                 <%= link_to_add_association 'Agregar', f, :atrichecks,partial: 'atrichecks_fields',class:"btn btn-outline-info"%>

@@ -1,6 +1,7 @@
 class Atricheck < ApplicationRecord
   belongs_to :remision
-  belongs_to :checkatri
+  has_many :checkatris
+  accepts_nested_attributes_for :checkatris,reject_if: :all_blank,allow_destroy: true
 
 
 end

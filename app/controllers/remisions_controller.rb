@@ -59,9 +59,9 @@ class RemisionsController < ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def remision_params
-        params.require(:remision).permit(:fecha_expedicion,:fecha_vencimiento,:clienteremi_id,:nota,:valor_bruto,:descuento,:subtotal,:iva,:total,
-        atriremis_attributes: [:id,:referencia, :descripcion, :lote, :iva, :cantidad, :unidad, :valor_unitario, :valor_total, :_destroy],
-        atrichecks_attributes: [:id,:referencia,:descripcion,:checkatri_id,:_destroy])
+        params.require(:remision).permit(:fecha_expedicion,:fecha_vencimiento,:clienteremi_id,:checkatri_id,:nota,:valor_bruto,:descuento,:subtotal,:iva,:total,
+        atriremis_attributes: [:id,:referencia, :descripcion, :lote, :cantidad, :unidad, :_destroy],
+        atrichecks_attributes: [:id,:lote, :cantidad, :unidad,:checkatri_id,:_destroy])
       end
 
 end
