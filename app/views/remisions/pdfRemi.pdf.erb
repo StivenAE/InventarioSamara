@@ -40,6 +40,16 @@
     <th width="8%">Cantidad</th>
     <th width="8%">Unidad</th>
   </tr>
+  <% @remision.atrichecks.each do |atricheck|%>
+  <tr>
+    <td><center><%=atricheck.checkatri.try(:referencia)%></center></td>
+    <td><center><%=atricheck.checkatri.try(:descripcion)%></center></td>
+    <td><center><%=atricheck.lote%></center></td>
+    <td><center><%=atricheck.cantidad%></center></td>
+    <td><center><%=atricheck.unidad%></center></td>
+  </tr>
+  <%end%>
+
   <% @remision.atriremis.each do |atriremi|%>
   <tr>
     <td><center><%= atriremi.referencia%></center></td>

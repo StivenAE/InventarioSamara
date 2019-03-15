@@ -1,8 +1,13 @@
 class Checkatri < ApplicationRecord
-belongs_to :remision
+  has_many :atrichecks
 
-  def product_order
-    "#{referencia} #{descripcion}"
+  accepts_nested_attributes_for :atrichecks,reject_if: :all_blank,allow_destroy: true
+
+
+  def name
+    "#{referencia} - #{descripcion}"
   end
+
+
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_08_151152) do
+ActiveRecord::Schema.define(version: 2019_03_15_122246) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2019_03_08_151152) do
     t.bigint "remision_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "checkatri_id"
+    t.index ["checkatri_id"], name: "index_atrichecks_on_checkatri_id"
     t.index ["remision_id"], name: "index_atrichecks_on_remision_id"
   end
 
@@ -68,10 +70,6 @@ ActiveRecord::Schema.define(version: 2019_03_08_151152) do
     t.string "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "atricheck_id"
-    t.bigint "remision_id"
-    t.index ["atricheck_id"], name: "index_checkatris_on_atricheck_id"
-    t.index ["remision_id"], name: "index_checkatris_on_remision_id"
   end
 
   create_table "clienteremis", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -173,10 +171,9 @@ ActiveRecord::Schema.define(version: 2019_03_08_151152) do
   end
 
   add_foreign_key "archives", "hojavidas"
+  add_foreign_key "atrichecks", "checkatris"
   add_foreign_key "atrichecks", "remisions"
   add_foreign_key "atriremis", "remisions"
-  add_foreign_key "checkatris", "atrichecks"
-  add_foreign_key "checkatris", "remisions"
   add_foreign_key "componentes", "hojavidas"
   add_foreign_key "licenses", "hojavidas"
   add_foreign_key "permisos", "hojavidas"

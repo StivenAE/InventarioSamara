@@ -22,7 +22,7 @@
 
 
 <% @remision.atriremis.each do |atriremi|%>
-<p><strong>referencia : </strong><%= atriremi.referencia%>
+<p><strong>Referencia : </strong><%= atriremi.referencia%>
 &nbsp;&nbsp;<strong>Descripcion :</strong><%=atriremi.descripcion%>
 &nbsp;&nbsp;<strong>Lote :</strong><%=atriremi.lote%>
 &nbsp;&nbsp;<strong>Cantidad :</strong><%=atriremi.cantidad%>
@@ -32,6 +32,8 @@
 
 <% @remision.atrichecks.each do |atricheck|%>
 <p>
+&nbsp;&nbsp;<strong>Referencia :</strong><%=atricheck.checkatri.try(:referencia)%>
+&nbsp;&nbsp;<strong>Descripcion :</strong><%=atricheck.checkatri.try(:descripcion)%>
 &nbsp;&nbsp;<strong>Lote :</strong><%=atricheck.lote%>
 &nbsp;&nbsp;<strong>Cantidad :</strong><%=atricheck.cantidad%>
 &nbsp;&nbsp;<strong>Unidad :</strong><%=atricheck.unidad%></p>

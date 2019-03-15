@@ -1,7 +1,6 @@
 <div class="nested-fields">
   <div class="col-md-10" style = "float: left">
-    <h5>Producto</h5>
-    <%= collection_select(:remisions,:checkatri_id,Checkatri.order(:referencia),:id,:product_order,{:prompt => 'Seleccionar Producto'},class:"custom-select col-md-8")%>
+    <%= f.association :checkatri, label: "Productos" %>
   </div>
   <div class=" col-md-2" style = "float: left">
     <h5><%= f.input :lote %></h5>
