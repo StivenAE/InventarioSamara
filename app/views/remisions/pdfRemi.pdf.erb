@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title> RemisionesSamaracosmetics</title>
+    <title> RemisionSamaracosmetics</title>
     <%=wicked_pdf_stylesheet_link_tag 'pdf'%>
     </head>
   <body>
@@ -71,7 +71,7 @@
     <p style="float:left;"><b>____________________ <br>Vendedor.</b> <br>Nit: 900.313.153-7</p>
     <p style="float:left;"><b>&nbsp; ____________________<br>Recib/Cliente.</b> <br>Nit/Cc: <%=@remision.clienteremi.nit%></p>
   </div>
-      <p><b>Nuestras marcas :</b> :
+      <p><b>Nuestras marcas :</b>
         <%= wicked_pdf_image_tag 'mawie150.png',style:"float:ringt; margin:5px;" %>
         <%= wicked_pdf_image_tag 'Isabely50.png'%>
         <%= wicked_pdf_image_tag 'lorhan.png' %></p>

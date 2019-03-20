@@ -4,7 +4,22 @@ class CheckatrisController < ApplicationController
   # GET /checkatris
   # GET /checkatris.json
   def index
-    @checkatris = Checkatri.all.paginate(:page => params[:page], :per_page =>10)
+    @checkatris = Checkatri.all.paginate(:page => params[:page], :per_page =>25)
+
+    respond_to do |format|
+      format.html
+      format.json
+      format.csv {send_data @checkatris.to_csv}
+      format.xls do
+        @checkatris = Checkatri.all
+      end# {send_data @hojavidas.to_csv(col_sep: "\t")}
+    end
+
+  end
+
+  def import
+    Checkatri.import(params[:file])
+    redirect_to root_url, notice: 'Productos importados correctamente.'
   end
 
   # GET /checkatris/1
@@ -28,8 +43,8 @@ class CheckatrisController < ApplicationController
 
     respond_to do |format|
       if @checkatri.save
-        format.html { redirect_to checkatris_path, notice: 'Producto creado correctamente.' }
-        format.json { render :index, status: :created, location: @checkatri }
+        format.html { redirect_to new_checkatri_path, notice: 'Producto creado correctamente.' }
+        format.json { render :new, status: :created, location: @checkatri }
       else
         format.html { render :new }
         format.json { render json: @checkatri.errors, status: :unprocessable_entity }

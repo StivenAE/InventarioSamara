@@ -19,37 +19,43 @@
           </div>
           <br>
 
-          <div class="col-md-12">
-            <div class="shadow p-3 mb-5 bg-white rounded">
-            <h4>Ingresar Productos a Remisionar</h4>
+          <div class="card text-center">
+            <div class="card-header">
+              <h4>Ingresar Productos</h4>
             </div>
-            <div id='atributos'>
-              <%= f.simple_fields_for :atriremis do |atriremi|%>
-              <%=render 'atriremis_fields', :f => atriremi%>
-              <%end%>
-              <div class='links'>
-                <%= link_to_add_association 'Agregar', f, :atriremis,partial: 'atriremis_fields',class:"btn btn-outline-info"%>
+            <div class="card-body">
+              <div id='atributos'>
+                <%= f.simple_fields_for :atriremis do |atriremi|%>
+                <%=render 'atriremis_fields', :f => atriremi%>
+                <%end%>
+                <div class='links'>
+                  <%= link_to_add_association 'Agregar', f, :atriremis,partial: 'atriremis_fields',class:"btn btn-outline-success"%>
+                </div>
               </div>
             </div>
           </div>
-          <br>
 
-          <div class="col-md-12">
-            <div class="shadow p-3 mb-5 bg-white rounded">
-            <h4>Buscar Productos a Remisionar</h4>
+          <hr>
+          <br>
+          <hr>
+          <div class="card text-center">
+            <div class="card-header">
+            <h4>Buscar Productos</h4>
             </div>
+            <div class="card-body">
             <div id='atributos'>
               <%= f.simple_fields_for :atrichecks do |atricheck|%>
               <%=render 'atrichecks_fields', :f => atricheck%>
               <%end%>
               <div class='links'>
-                <%= link_to_add_association 'Agregar', f, :atrichecks,partial: 'atrichecks_fields',class:"btn btn-outline-info"%>
+                <%= link_to_add_association 'Agregar', f, :atrichecks,partial: 'atrichecks_fields',class:"btn btn-outline-success"%>
               </div>
+            </div>
             </div>
           </div>
           <br>
 
-        <hr><hr>
+        <hr>
         <div class="form-row">
             <div class="form-group col-md-12">
               <div class="shadow-none p-3 mb-5 bg-light rounded">

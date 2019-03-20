@@ -14,7 +14,15 @@
   </thead>
   <div class="d-flex flex-row-reverse bd-highligth p-1">
       <%= link_to 'Nuevo registro', new_checkatri_path, class:"btn btn-success mr-2" %>
+      <%= link_to 'Excel', checkatris_path(format: "xls"), class:"btn btn-outline-success mr-2" %>
+      <div class="">
+        <%= form_tag import_checkatris_path, multipart: true do %>
+        <%= submit_tag "Importar", class:"btn btn-secondary mr-2" %>
+        <%= file_field_tag :file, class:"btn btn-outline-secondary mr-2" %>
+        <% end %>
+      </div>
   </div>
+
   <tbody>
     <% @checkatris.each do |checkatri| %>
       <tr>

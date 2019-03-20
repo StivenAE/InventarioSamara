@@ -2,6 +2,15 @@ class RemisionsController < ApplicationController
 
     def index
       @remisions = Remision.all.paginate(:page => params[:page], :per_page =>10)
+
+      respond_to do |format|
+          format.html
+          format.csv { send_data @remisions.to_csv }
+          format.xls do
+            @remisions = Hojavida.all
+          end## { send_data @products.to_csv(col_sep: "\t") }
+      end
+
     end
 
     def show
@@ -63,6 +72,6 @@ class RemisionsController < ApplicationController
         atriremis_attributes: [:id,:referencia, :descripcion, :lote, :cantidad, :unidad, :_destroy],
         atrichecks_attributes: [:id,:lote, :cantidad, :unidad,:checkatri_id,:_destroy])
       end
-      #asi ?
+
 
 end

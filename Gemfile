@@ -75,3 +75,5 @@ gem 'data-confirm-modal'
 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+
+gem 'roo', '~> 2.7.0'
