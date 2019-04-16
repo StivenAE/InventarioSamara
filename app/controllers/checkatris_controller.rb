@@ -4,7 +4,7 @@ class CheckatrisController < ApplicationController
   # GET /checkatris
   # GET /checkatris.json
   def index
-    @checkatris = Checkatri.all.paginate(:page => params[:page], :per_page =>25)
+    @checkatris = Checkatri.order(referencia: :asc).paginate(:page => params[:page], :per_page =>25)
 
     respond_to do |format|
       format.html

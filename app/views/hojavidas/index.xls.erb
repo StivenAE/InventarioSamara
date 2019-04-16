@@ -8,7 +8,9 @@
     <Table>
       <Row>
         <Cell><Data ss:Type="String">Nombre</Data></Cell>
+        <Cell><Data ss:Type="String">Tipo</Data></Cell>
         <Cell><Data ss:Type="String">Marca</Data></Cell>
+        <Cell><Data ss:Type="String">Modelo</Data></Cell>
         <Cell><Data ss:Type="String">Serial</Data></Cell>
         <Cell><Data ss:Type="String">Area funcionamiento</Data></Cell>
         <Cell><Data ss:Type="String">Fecha compra</Data></Cell>
@@ -18,7 +20,9 @@
     <% @hojavidas.each do |hojavida| %>
       <Row>
         <Cell><Data ss:Type="String"><%= hojavida.nombre %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= hojavida.tipo %></Data></Cell>
         <Cell><Data ss:Type="String"><%= hojavida.marca %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= hojavida.modelo%></Data></Cell>
         <Cell><Data ss:Type="String"><%= hojavida.serial %></Data></Cell>
         <Cell><Data ss:Type="String"><%= hojavida.area_funcionamiento %></Data></Cell>
         <Cell><Data ss:Type="String"><%= hojavida.fecha_compra %></Data></Cell>
